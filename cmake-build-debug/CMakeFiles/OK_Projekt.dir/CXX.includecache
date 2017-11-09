@@ -6,37 +6,39 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/init.cpp
+C:/Users/Luk3r/Documents/GitHub/OK/init.cpp
 init.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/init.h
+C:/Users/Luk3r/Documents/GitHub/OK/init.h
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/init.h
+C:/Users/Luk3r/Documents/GitHub/OK/init.h
+time.h
+-
 map.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+C:/Users/Luk3r/Documents/GitHub/OK/map.h
 route.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+C:/Users/Luk3r/Documents/GitHub/OK/route.h
 mutate.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/mutate.h
+C:/Users/Luk3r/Documents/GitHub/OK/mutate.h
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/main.cpp
+C:/Users/Luk3r/Documents/GitHub/OK/main.cpp
 iostream
 -
 fstream
 -
 map.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+C:/Users/Luk3r/Documents/GitHub/OK/map.h
 route.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+C:/Users/Luk3r/Documents/GitHub/OK/route.h
 mutate.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/mutate.h
+C:/Users/Luk3r/Documents/GitHub/OK/mutate.h
 init.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/init.h
+C:/Users/Luk3r/Documents/GitHub/OK/init.h
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.cpp
+C:/Users/Luk3r/Documents/GitHub/OK/map.cpp
 map.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+C:/Users/Luk3r/Documents/GitHub/OK/map.h
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+C:/Users/Luk3r/Documents/GitHub/OK/map.h
 iostream
 -
 fstream
@@ -46,29 +48,29 @@ time.h
 math.h
 -
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/mutate.cpp
+C:/Users/Luk3r/Documents/GitHub/OK/mutate.cpp
 mutate.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/mutate.h
+C:/Users/Luk3r/Documents/GitHub/OK/mutate.h
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/mutate.h
+C:/Users/Luk3r/Documents/GitHub/OK/mutate.h
 map.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+C:/Users/Luk3r/Documents/GitHub/OK/map.h
 route.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+C:/Users/Luk3r/Documents/GitHub/OK/route.h
 init.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/init.h
+C:/Users/Luk3r/Documents/GitHub/OK/init.h
 time.h
 -
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/route.cpp
+C:/Users/Luk3r/Documents/GitHub/OK/route.cpp
 route.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+C:/Users/Luk3r/Documents/GitHub/OK/route.h
 
-C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+C:/Users/Luk3r/Documents/GitHub/OK/route.h
 iostream
 -
 fstream
 -
 map.h
-C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+C:/Users/Luk3r/Documents/GitHub/OK/map.h
 

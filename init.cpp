@@ -63,9 +63,18 @@ double zachlanny_artura( map &town, route &path) {
 }
 
 void populateGeneration( map &town, route generation[generationSize]) {
-    for (int i=0;i<town.getSize() && i<generationSize ;i++)
+    int i;
+    for (i=0;i<town.getSize() && i<generationSize ;i++)
     {
         generation[i].setFitness(zachlanny_artura_pojedynczy(i,town,*&generation[i]));
+    }
+    srand (time(NULL));
+    while(i<generationSize){
+        int targetA=rand()%i;
+        int targetB=rand()%i;
+        mutateCross(generation[targetA],generation[targetB],*&generation[i],*&town);
+        generation[i].calcFitness(*&town);
+        i++;
     }
 }
 

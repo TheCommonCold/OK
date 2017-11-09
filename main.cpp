@@ -17,7 +17,6 @@ int main() {
     min_zachlanny=zachlanny_artura(*&town, *&path);
     std::cout<<min_zachlanny<<" "<<path.getRoute(0)<<std::endl;
     populateGeneration(*&town,*&generation);
-    mutateCross(*&generation[0],*&generation[1],*&generation[25],*&town);
     //std::cout<<generation[20].getRoute(0)<<"  "<<generation[20].getFitness();
     return 0;
 }

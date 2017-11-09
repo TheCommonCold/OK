@@ -1,7 +1,7 @@
 #include "map.h"
 
 void map::load(){
-    std::ifstream file("C:\\Users\\Luker\\CLionProjects\\OK_Projekt V3\\plik.txt");
+    std::ifstream file("C:\\Users\\Luk3r\\Documents\\GitHub\\OK\\plik.txt");
     file>>this->size;
     for(int i=0;i<this->size;i++){
         file>>this->coords[i][0];

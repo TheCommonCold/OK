@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Luker/CLionProjects/OK_Projekt V3/init.cpp" "C:/Users/Luker/CLionProjects/OK_Projekt V3/cmake-build-debug/CMakeFiles/OK_Projekt.dir/init.cpp.obj"
-  "C:/Users/Luker/CLionProjects/OK_Projekt V3/main.cpp" "C:/Users/Luker/CLionProjects/OK_Projekt V3/cmake-build-debug/CMakeFiles/OK_Projekt.dir/main.cpp.obj"
-  "C:/Users/Luker/CLionProjects/OK_Projekt V3/map.cpp" "C:/Users/Luker/CLionProjects/OK_Projekt V3/cmake-build-debug/CMakeFiles/OK_Projekt.dir/map.cpp.obj"
-  "C:/Users/Luker/CLionProjects/OK_Projekt V3/mutate.cpp" "C:/Users/Luker/CLionProjects/OK_Projekt V3/cmake-build-debug/CMakeFiles/OK_Projekt.dir/mutate.cpp.obj"
-  "C:/Users/Luker/CLionProjects/OK_Projekt V3/route.cpp" "C:/Users/Luker/CLionProjects/OK_Projekt V3/cmake-build-debug/CMakeFiles/OK_Projekt.dir/route.cpp.obj"
+  "C:/Users/Luk3r/Documents/GitHub/OK/init.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/init.cpp.obj"
+  "C:/Users/Luk3r/Documents/GitHub/OK/main.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/main.cpp.obj"
+  "C:/Users/Luk3r/Documents/GitHub/OK/map.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/map.cpp.obj"
+  "C:/Users/Luk3r/Documents/GitHub/OK/mutate.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/mutate.cpp.obj"
+  "C:/Users/Luk3r/Documents/GitHub/OK/route.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/route.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
