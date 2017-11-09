@@ -1,0 +1,56 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Luker/CLionProjects/OK_Projekt V3/main.cpp
+iostream
+-
+fstream
+-
+map.h
+C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+route.h
+C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+
+C:/Users/Luker/CLionProjects/OK_Projekt V3/map.cpp
+iostream
+-
+fstream
+-
+time.h
+-
+math.h
+-
+map.h
+C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+
+C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+iostream
+-
+fstream
+-
+
+C:/Users/Luker/CLionProjects/OK_Projekt V3/route.cpp
+iostream
+-
+fstream
+-
+math.h
+-
+route.h
+C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+map.h
+C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+
+C:/Users/Luker/CLionProjects/OK_Projekt V3/route.h
+iostream
+-
+fstream
+-
+map.h
+C:/Users/Luker/CLionProjects/OK_Projekt V3/map.h
+
