@@ -1,11 +1,7 @@
-#include <iostream>
-#include <fstream>
-#include <time.h>
-#include <math.h>
 #include "map.h"
 
 void map::load(){
-    std::ifstream file("C:\\Users\\Luker\\CLionProjects\\OK_Projekt V3\\tsp500.txt");
+    std::ifstream file("C:\\Users\\Luker\\CLionProjects\\OK_Projekt V3\\plik.txt");
     file>>this->size;
     for(int i=0;i<this->size;i++){
         file>>this->coords[i][0];

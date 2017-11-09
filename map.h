@@ -6,6 +6,8 @@
 #define OK_PROJEKT_MAP_H
 #include <iostream>
 #include <fstream>
+#include <time.h>
+#include <math.h>
 class map {
 private:
     int size;

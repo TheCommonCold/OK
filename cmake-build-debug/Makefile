@@ -122,6 +122,33 @@ OK_Projekt/fast:
 	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/build
 .PHONY : OK_Projekt/fast
 
+init.obj: init.cpp.obj
+
+.PHONY : init.obj
+
+# target to build an object file
+init.cpp.obj:
+	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/init.cpp.obj
+.PHONY : init.cpp.obj
+
+init.i: init.cpp.i
+
+.PHONY : init.i
+
+# target to preprocess a source file
+init.cpp.i:
+	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/init.cpp.i
+.PHONY : init.cpp.i
+
+init.s: init.cpp.s
+
+.PHONY : init.s
+
+# target to generate assembly for a file
+init.cpp.s:
+	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/init.cpp.s
+.PHONY : init.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -176,6 +203,33 @@ map.cpp.s:
 	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/map.cpp.s
 .PHONY : map.cpp.s
 
+mutate.obj: mutate.cpp.obj
+
+.PHONY : mutate.obj
+
+# target to build an object file
+mutate.cpp.obj:
+	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/mutate.cpp.obj
+.PHONY : mutate.cpp.obj
+
+mutate.i: mutate.cpp.i
+
+.PHONY : mutate.i
+
+# target to preprocess a source file
+mutate.cpp.i:
+	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/mutate.cpp.i
+.PHONY : mutate.cpp.i
+
+mutate.s: mutate.cpp.s
+
+.PHONY : mutate.s
+
+# target to generate assembly for a file
+mutate.cpp.s:
+	$(MAKE) -f CMakeFiles\OK_Projekt.dir\build.make CMakeFiles/OK_Projekt.dir/mutate.cpp.s
+.PHONY : mutate.cpp.s
+
 route.obj: route.cpp.obj
 
 .PHONY : route.obj
@@ -212,12 +266,18 @@ help:
 	@echo ... rebuild_cache
 	@echo ... OK_Projekt
 	@echo ... edit_cache
+	@echo ... init.obj
+	@echo ... init.i
+	@echo ... init.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
 	@echo ... map.obj
 	@echo ... map.i
 	@echo ... map.s
+	@echo ... mutate.obj
+	@echo ... mutate.i
+	@echo ... mutate.s
 	@echo ... route.obj
 	@echo ... route.i
 	@echo ... route.s

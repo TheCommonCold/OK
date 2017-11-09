@@ -1,8 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <math.h>
 #include "route.h"
-#include "map.h"
 
 void route::setRoute(int a,int i){
     this->route[i]=a;
