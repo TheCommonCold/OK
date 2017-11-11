@@ -10,7 +10,9 @@
 #include <math.h>
 class map {
 private:
+    //ilosc miast
     int size;
+    //x i y kazdego miasta
     int coords[2000][2];
 
 public:

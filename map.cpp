@@ -1,9 +1,27 @@
 #include "map.h"
 
 void map::load(){
-    std::ifstream file("C:\\Users\\Luker\\Documents\\GitHub\\OK\\plik.txt");
+    //Kiedyś trzeba to ogarnąc
+    std::cout<<"[map.load()] Kto otwiera?\n0 - Lukasz\n1 - Artur Y70\n2 - Artur Linux(trza dodac)\n3 - Artur Win Y550(trza dodac)\n";
+    int number_of_location;
+    std::string location_of_files;
+    std::cin>>number_of_location;
+    switch (number_of_location)
+    {
+        case 0:
+            location_of_files="C:\\Users\\Luker\\Documents\\GitHub\\OK\\plik.txt";
+            break;
+        case 1:
+            location_of_files="D:\\Artur\\Repos\\OK\\plik.txt";
+            break;
+        default:
+            std::cout<<"location unspecified"<<std::endl;
+            return;
+    }
+    std::ifstream file(location_of_files);
     file>>this->size;
     for(int i=0;i<this->size;i++){
+        //dwa razy bo najpierw wczytuje numer miasta ktorego nie uzywamy potem x i y
         file>>this->coords[i][0];
         file>>this->coords[i][0];
         file>>this->coords[i][1];
@@ -14,9 +32,9 @@ int map::getSize(){
     return this->size;
 }
 
-double map::getDistance(int x, int y){
+double map::getDistance(int i, int j){
    //std::cout<<"a  1  "<<x<<" "<<y<<std::endl;
-    return sqrt(((this->coords[x][0]-this->coords[y][0])*(this->coords[x][0]-this->coords[y][0]))+((this->coords[x][1]-this->coords[y][1])*(this->coords[x][1]-this->coords[y][1])));
+    return sqrt(pow((this->coords[i][0]-this->coords[j][0]),2)+pow((this->coords[i][1]-this->coords[j][1]),2));
 }
 
 int map::getX(int x){
@@ -27,6 +45,7 @@ int map::getY(int x){
     return this->coords[x][1];
 }
 
+//generator losowej instancji
 void map::create(int size,int MaxNumber){
     srand (time(NULL));
     this->size=size;
@@ -47,6 +66,7 @@ void map::create(int size,int MaxNumber){
     }
 }
 
+//generator chorej instancji
 void map::createMeme(int size) {
     srand (time(NULL));
     this->size=size;
@@ -81,6 +101,7 @@ void map::createMeme(int size) {
     }
 }
 
+//tworzy plik wyjsciowy z instancja
 void map::CreateMapFile() {
     std::ofstream file("C:\\Users\\Luker\\CLionProjects\\OK_Projekt V3\\map.txt");
     file<<this->size<<std::endl;

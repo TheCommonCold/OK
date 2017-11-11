@@ -6,53 +6,53 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Luker/Documents/GitHub/OK/genePool.cpp
+D:/Artur/Repos/OK/genePool.cpp
 genePool.h
-C:/Users/Luker/Documents/GitHub/OK/genePool.h
+D:/Artur/Repos/OK/genePool.h
 
-C:/Users/Luker/Documents/GitHub/OK/genePool.h
+D:/Artur/Repos/OK/genePool.h
 route.h
-C:/Users/Luker/Documents/GitHub/OK/route.h
+D:/Artur/Repos/OK/route.h
 map.h
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 init.h
-C:/Users/Luker/Documents/GitHub/OK/init.h
+D:/Artur/Repos/OK/init.h
 
-C:/Users/Luker/Documents/GitHub/OK/init.cpp
+D:/Artur/Repos/OK/init.cpp
 init.h
-C:/Users/Luker/Documents/GitHub/OK/init.h
+D:/Artur/Repos/OK/init.h
 
-C:/Users/Luker/Documents/GitHub/OK/init.h
+D:/Artur/Repos/OK/init.h
 time.h
 -
 map.h
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 route.h
-C:/Users/Luker/Documents/GitHub/OK/route.h
+D:/Artur/Repos/OK/route.h
 mutate.h
-C:/Users/Luker/Documents/GitHub/OK/mutate.h
+D:/Artur/Repos/OK/mutate.h
 
-C:/Users/Luker/Documents/GitHub/OK/main.cpp
+D:/Artur/Repos/OK/main.cpp
 iostream
 -
 fstream
 -
 map.h
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 route.h
-C:/Users/Luker/Documents/GitHub/OK/route.h
+D:/Artur/Repos/OK/route.h
 mutate.h
-C:/Users/Luker/Documents/GitHub/OK/mutate.h
+D:/Artur/Repos/OK/mutate.h
 init.h
-C:/Users/Luker/Documents/GitHub/OK/init.h
+D:/Artur/Repos/OK/init.h
 genePool.h
-C:/Users/Luker/Documents/GitHub/OK/genePool.h
+D:/Artur/Repos/OK/genePool.h
 
-C:/Users/Luker/Documents/GitHub/OK/map.cpp
+D:/Artur/Repos/OK/map.cpp
 map.h
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 iostream
 -
 fstream
@@ -62,29 +62,29 @@ time.h
 math.h
 -
 
-C:/Users/Luker/Documents/GitHub/OK/mutate.cpp
+D:/Artur/Repos/OK/mutate.cpp
 mutate.h
-C:/Users/Luker/Documents/GitHub/OK/mutate.h
+D:/Artur/Repos/OK/mutate.h
 
-C:/Users/Luker/Documents/GitHub/OK/mutate.h
+D:/Artur/Repos/OK/mutate.h
 map.h
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 route.h
-C:/Users/Luker/Documents/GitHub/OK/route.h
+D:/Artur/Repos/OK/route.h
 init.h
-C:/Users/Luker/Documents/GitHub/OK/init.h
+D:/Artur/Repos/OK/init.h
 time.h
 -
 
-C:/Users/Luker/Documents/GitHub/OK/route.cpp
+D:/Artur/Repos/OK/route.cpp
 route.h
-C:/Users/Luker/Documents/GitHub/OK/route.h
+D:/Artur/Repos/OK/route.h
 
-C:/Users/Luker/Documents/GitHub/OK/route.h
+D:/Artur/Repos/OK/route.h
 iostream
 -
 fstream
 -
 map.h
-C:/Users/Luker/Documents/GitHub/OK/map.h
+D:/Artur/Repos/OK/map.h
 

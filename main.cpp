@@ -16,11 +16,11 @@ int main() {
     double min_zachlanny;
     //std::cout<<zachlanny_artura_pojedynczy(0,town,path);
     min_zachlanny=zachlanny_artura(*&town, *&path);
-    std::cout<<min_zachlanny<<" "<<path.getRoute(0)<<std::endl;
+    std::cout<<min_zachlanny<<" "<< path.getTown(0)<<std::endl;
     populateGeneration(*&town,*&generation);
     genePool pool;
     pool.calcMaxFitness(*&generation,*&town);
     pool.createPool(*&generation,*&town);
-    //std::cout<<generation[20].getRoute(0)<<"  "<<generation[20].getFitness();
+    //std::cout<<generation[20].getTown(0)<<"  "<<generation[20].getFitness();
     return 0;
 }

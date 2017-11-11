@@ -8,12 +8,14 @@
 #include <fstream>
 #include "map.h"
 class route {
+
 private:
     int route[1000];
     double fitness;
+
 public:
-    void setRoute(int a,int i);
-    int getRoute(int i);
+    void setTown(int a, int i);
+    int getTown(int i);
     double getFitness();
     void setFitness(double a);
     double calcFitness(map &town);

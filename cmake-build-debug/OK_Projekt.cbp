@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug"/>
+				<Option working_dir="D:/Artur/Repos/OK/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug"/>
+				<Option working_dir="D:/Artur/Repos/OK/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OK_Projekt">
-				<Option output="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/OK_Projekt.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug"/>
+				<Option output="D:/Artur/Repos/OK/cmake-build-debug/OK_Projekt.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Artur/Repos/OK/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -42,15 +42,15 @@
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.1.0-posix-dwarf-rt_v5-rev2/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 OK_Projekt"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 OK_Projekt"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="OK_Projekt/fast">
-				<Option output="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/OK_Projekt.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug"/>
+				<Option output="D:/Artur/Repos/OK/cmake-build-debug/OK_Projekt.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Artur/Repos/OK/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -63,57 +63,57 @@
 					<Add directory="C:/Program Files (x86)/mingw-w64/i686-7.1.0-posix-dwarf-rt_v5-rev2/mingw32/bin/../lib/gcc/i686-w64-mingw32/7.1.0/../../../../i686-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 OK_Projekt/fast"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 OK_Projekt/fast"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug"/>
+				<Option working_dir="D:/Artur/Repos/OK/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;C:/Users/Luker/Documents/GitHub/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/MINGW-~1/I686-7~1.0-P/mingw32/bin/mingw32-make.exe -f &quot;D:/Artur/Repos/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/genePool.cpp">
+		<Unit filename="D:/Artur/Repos/OK/genePool.cpp">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/genePool.h">
+		<Unit filename="D:/Artur/Repos/OK/genePool.h">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/init.cpp">
+		<Unit filename="D:/Artur/Repos/OK/init.cpp">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/init.h">
+		<Unit filename="D:/Artur/Repos/OK/init.h">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/main.cpp">
+		<Unit filename="D:/Artur/Repos/OK/main.cpp">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/map.cpp">
+		<Unit filename="D:/Artur/Repos/OK/map.cpp">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/map.h">
+		<Unit filename="D:/Artur/Repos/OK/map.h">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/mutate.cpp">
+		<Unit filename="D:/Artur/Repos/OK/mutate.cpp">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/mutate.h">
+		<Unit filename="D:/Artur/Repos/OK/mutate.h">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/route.cpp">
+		<Unit filename="D:/Artur/Repos/OK/route.cpp">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/route.h">
+		<Unit filename="D:/Artur/Repos/OK/route.h">
 			<Option target="OK_Projekt"/>
 		</Unit>
-		<Unit filename="C:/Users/Luker/Documents/GitHub/OK/CMakeLists.txt">
+		<Unit filename="D:/Artur/Repos/OK/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -6,25 +6,25 @@ double zachlanny_artura_pojedynczy(int start,map &town, route &path) {
     int min_neighbour;
     double min_dist,cur_dist;
     double sum_dist=0;
-    path.setRoute(start,0);
+    path.setTown(start, 0);
     odwiedzone[start]=true;
     for (int i=1;i<town.getSize();i++) {
         min_dist=0;
         for (int j=0;j<town.getSize();j++) {
-            if(path.getRoute(i-1)==j) continue;
-            cur_dist=town.getDistance(path.getRoute(i-1),j);
+            if(path.getTown(i - 1)==j) continue;
+            cur_dist=town.getDistance(path.getTown(i - 1),j);
             if(!odwiedzone[j]&&(cur_dist<min_dist||min_dist==0)) {
                 min_dist = cur_dist;
                 min_neighbour = j;
             }
         }
         //std::cout<<min_neighbour<<" "<<min_dist<<std::endl;
-        path.setRoute(min_neighbour,i);
+        path.setTown(min_neighbour, i);
         sum_dist+=min_dist;
         odwiedzone[min_neighbour]=true;
     }
 //    std::cout<<sum_dist;
-    sum_dist+=town.getDistance(path.getRoute(0),path.getRoute(town.getSize()-1));
+    sum_dist+=town.getDistance(path.getTown(0), path.getTown(town.getSize() - 1));
 //    std::cout<<" "<<sum_dist;
 //    std::cout<<" "<<town.getSize()-1;
 //    std::cout<<" "<<path[0];
@@ -44,7 +44,7 @@ double zachlanny_artura( map &town, route &path) {
         //std::cout << cur_dist;
         //std::cout<<std::endl;
         //for(int j=0;j<town.getSize();j++) {
-        //    std::cout << path_cur.getRoute(j) << " ";
+        //    std::cout << path_cur.getTown(j) << " ";
         //}
         //std::cout<<" "<< cur_dist<<std::endl;
         if(cur_dist<min_dist||i==0)
@@ -52,12 +52,12 @@ double zachlanny_artura( map &town, route &path) {
             min_dist=cur_dist;
             for(int j=0;j<town.getSize();j++)
             {
-                path_min.setRoute(path_cur.getRoute(j),j);
+                path_min.setTown(path_cur.getTown(j), j);
             }
         }
     }
     for(int j=0;j<town.getSize();j++) {
-        path.setRoute(path_min.getRoute(j),j);
+        path.setTown(path_min.getTown(j), j);
     }
     return min_dist;
 }
