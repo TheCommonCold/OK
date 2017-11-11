@@ -11,13 +11,17 @@ class route {
 
 private:
     int route[1000];
-    double fitness;
+    double length, fitness;
 
 public:
     void setTown(int a, int i);
     int getTown(int i);
-    double getFitness();
+
+    double getLength();
+    void setLength(double a);
+    double calcLength(map &town);
+
     void setFitness(double a);
-    double calcFitness(map &town);
+    double getFitness();
 };
 #endif //OK_PROJEKT_DROGA_H

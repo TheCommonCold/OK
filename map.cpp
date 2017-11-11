@@ -14,6 +14,9 @@ void map::load(){
         case 1:
             location_of_files="D:\\Artur\\Repos\\OK\\plik.txt";
             break;
+        case 2:
+            location_of_files="/home/artur/Repos/CLion/OK/plik.txt";
+            break;
         default:
             std::cout<<"location unspecified"<<std::endl;
             return;
