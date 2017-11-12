@@ -8,6 +8,17 @@ int route::getTown(int i) {
     return this->route[i];
 }
 
+void route::setRoute(std::vector<int> vec){
+    int i=0;
+    for(auto it=vec.begin();it!=vec.end();it++,i++){
+        this->route[i]=*it;
+    }
+}
+
+std::vector<int> route::getRoute(){
+    return this->route;
+}
+
 double route::calcLength(map &town){
     double distance=0;
     for(int i=0;i<town.getSize()-1;i++)

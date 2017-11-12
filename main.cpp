@@ -13,7 +13,7 @@ int main() {
     town.load();
     //town.createMeme(80);
     //town.CreateMapFile();
-    double min_zachlanny;
+    genePool generations;
     //std::cout<<zachlanny_artura_pojedynczy(0,town,path);
     min_zachlanny=zachlanny_artura(*&town, *&path);
     std::cout<<min_zachlanny<<" "<< path.getTown(0)<<std::endl;

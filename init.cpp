@@ -73,7 +73,7 @@ void populateGeneration( map &town, route generation[generationSize]) {
         int targetA=rand()%i;
         int targetB=rand()%i;
         mutateCross(generation[targetA],generation[targetB],*&generation[i],*&town);
-        generation[i].calcFitness(*&town);
+        generation[i].calcLength(*&town);
         i++;
     }
 }

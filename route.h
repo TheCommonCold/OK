@@ -6,16 +6,21 @@
 #define OK_PROJEKT_DROGA_H
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include "map.h"
+
 class route {
 
 private:
-    int route[1000];
+    std::vector<int> route;
     double length, fitness;
 
 public:
     void setTown(int a, int i);
     int getTown(int i);
+
+    void setRoute(std::vector<int> vec);
+    std::vector<int> getRoute();
 
     double getLength();
     void setLength(double a);

@@ -2,7 +2,7 @@
 
 void map::load(){
     //Kiedyś trzeba to ogarnąc
-    std::cout<<"[map.load()] Kto otwiera?\n0 - Lukasz\n1 - Artur Y70\n2 - Artur Linux(trza dodac)\n3 - Artur Win Y550(trza dodac)\n";
+    std::cout<<"[map.load()] Kto otwiera?\n0 - Lukasz\n1 - Artur Y70\n2 - Artur Linux\n3 - Artur Win Y550(trza dodac)\n";
     int number_of_location;
     std::string location_of_files;
     std::cin>>number_of_location;
