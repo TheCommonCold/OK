@@ -15,15 +15,19 @@ route.h
 D:/Artur/Repos/OK/route.h
 map.h
 D:/Artur/Repos/OK/map.h
-init.h
-D:/Artur/Repos/OK/init.h
+vector
+-
 
 D:/Artur/Repos/OK/init.cpp
 init.h
 D:/Artur/Repos/OK/init.h
 
 D:/Artur/Repos/OK/init.h
-time.h
+ctime
+-
+random
+-
+vector
 -
 map.h
 D:/Artur/Repos/OK/map.h
@@ -31,11 +35,15 @@ route.h
 D:/Artur/Repos/OK/route.h
 mutate.h
 D:/Artur/Repos/OK/mutate.h
+genePool.h
+D:/Artur/Repos/OK/genePool.h
 
 D:/Artur/Repos/OK/main.cpp
 iostream
 -
 fstream
+-
+vector
 -
 map.h
 D:/Artur/Repos/OK/map.h
@@ -69,10 +77,10 @@ D:/Artur/Repos/OK/mutate.h
 D:/Artur/Repos/OK/mutate.h
 map.h
 D:/Artur/Repos/OK/map.h
+random
+-
 route.h
 D:/Artur/Repos/OK/route.h
-init.h
-D:/Artur/Repos/OK/init.h
 time.h
 -
 
@@ -84,6 +92,8 @@ D:/Artur/Repos/OK/route.h
 iostream
 -
 fstream
+-
+vector
 -
 map.h
 D:/Artur/Repos/OK/map.h

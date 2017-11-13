@@ -4,11 +4,10 @@
 CMakeFiles/OK_Projekt.dir/genePool.cpp.obj
  D:/Artur/Repos/OK/genePool.cpp
  D:/Artur/Repos/OK/genePool.h
- D:/Artur/Repos/OK/init.h
  D:/Artur/Repos/OK/map.h
- D:/Artur/Repos/OK/mutate.h
  D:/Artur/Repos/OK/route.h
 CMakeFiles/OK_Projekt.dir/init.cpp.obj
+ D:/Artur/Repos/OK/genePool.h
  D:/Artur/Repos/OK/init.cpp
  D:/Artur/Repos/OK/init.h
  D:/Artur/Repos/OK/map.h
@@ -25,7 +24,6 @@ CMakeFiles/OK_Projekt.dir/map.cpp.obj
  D:/Artur/Repos/OK/map.cpp
  D:/Artur/Repos/OK/map.h
 CMakeFiles/OK_Projekt.dir/mutate.cpp.obj
- D:/Artur/Repos/OK/init.h
  D:/Artur/Repos/OK/map.h
  D:/Artur/Repos/OK/mutate.cpp
  D:/Artur/Repos/OK/mutate.h
