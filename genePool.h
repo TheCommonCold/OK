@@ -47,9 +47,7 @@ public:
     void printSpeciman(int number);
     void printAllSpecimen();
 
-
-
-
+    void calcFitnessAll();
 };
 
 

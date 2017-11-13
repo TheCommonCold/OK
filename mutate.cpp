@@ -1,9 +1,10 @@
 #include "mutate.h"
 
-void mutateCross(route a, route b, route &out, map &town){
+void mutateCross(route a, route b, route &out, map &town, std::mt19937 mt,std::uniform_int_distribution<int> dis){
     int i=1;
+    for (int i=0;i<100;i++) std::cout<<dis(mt)<<std::endl;
     srand (time(NULL));
-    int target=rand()%2;
+    int target=dis(mt)%2;
     if(target)out.setTown(a.getTown(0), 0);
     else out.setTown(b.getTown(0), 0);
     while(i<town.getSize()){
@@ -50,4 +51,7 @@ void mutateCross(route a, route b, route &out, map &town){
         i++;
     }
     //std::cout<<std::endl;
+}
+void wypislosowych(std::mt19937 mt,std::uniform_int_distribution<int> dis){
+    for(int i=0;i<100;i++) std::cout<<dis(mt)<<std::endl;
 }
