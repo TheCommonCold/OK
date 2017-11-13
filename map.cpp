@@ -2,23 +2,26 @@
 
 void map::load(){
     //Kiedyś trzeba to ogarnąc
-    std::cout<<"[map.load()] Kto otwiera?\n0 - Lukasz\n1 - Artur Y70\n2 - Artur Linux\n3 - Artur Win Y550(trza dodac)\n";
-    int number_of_location;
+    std::cout<<"[map.load()] Kto otwiera?\n0 - Lukasz domowy\n1 - Lukasz - laptop\n2 - Artur Y70\n3 - Artur Linux\n\n";
+    int number_of_location=2;
     std::string location_of_files;
-    std::cin>>number_of_location;
+    //std::cin>>number_of_location;
     switch (number_of_location)
     {
         case 0:
             location_of_files="C:\\Users\\Luker\\Documents\\GitHub\\OK\\plik.txt";
             break;
         case 1:
-            location_of_files="D:\\Artur\\Repos\\OK\\plik.txt";
+        std::cout<<"uzupełnij map.load()\n";
             break;
         case 2:
+            location_of_files="D:\\Artur\\Repos\\OK\\plik.txt";
+            break;
+        case 3:
             location_of_files="/home/artur/Repos/CLion/OK/plik.txt";
             break;
         default:
-            std::cout<<"location unspecified"<<std::endl;
+            std::cout<<"location unspecified map.load()"<<std::endl;
             return;
     }
     std::ifstream file(location_of_files);

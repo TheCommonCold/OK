@@ -8,11 +8,9 @@ int route::getTown(int i) {
     return this->route[i];
 }
 
-void route::setRoute(std::vector<int> vec){
-    int i=0;
-    for(auto it=vec.begin();it!=vec.end();it++,i++){
-        this->route[i]=*it;
-    }
+void route::setRoute(std::vector<int> vec, map &town){
+        this->route=vec;
+        this->calcLength(town);
 }
 
 std::vector<int> route::getRoute(){

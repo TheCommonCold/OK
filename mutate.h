@@ -3,7 +3,6 @@
 
 #include "map.h"
 #include "route.h"
-#include "init.h"
 #include <time.h>
 
 void mutateCross(route a, route b, route &out, map &town);

@@ -19,7 +19,7 @@ public:
     void setTown(int a, int i);
     int getTown(int i);
 
-    void setRoute(std::vector<int> vec);
+    void setRoute(std::vector<int> vec, map &town);
     std::vector<int> getRoute();
 
     double getLength();

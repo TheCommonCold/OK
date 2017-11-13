@@ -3,16 +3,15 @@
 
 #include "route.h"
 #include "map.h"
-#include "init.h"
 #include<vector>
 class genePool{
 private:
     //2 rzeby an zmiane byly aktualna i nowa
-    std::vector<route> pool[2];
-    double currentMaxFitness,currentBestLength;
+    std::vector<route> pool;
+    double currentMaxFitness,currentWorstLength,currentBestLength;
     route bestRoute;
     unsigned long long currentFitnessSum;
-    int currentGeneration;
+
 
 public:
 
@@ -21,15 +20,19 @@ public:
     double getCurrentBestLength();
 
     //currentMaxFitness
-    void setMaxFitness(double a);
+    void setMaxFitness(double a, bool force);
     double getMaxFitness();
     //double calcMaxFitness(route generation[generationSize], map &town);
+
+    //currentWorstLength
+    void setWorstLength(double a, bool force);
+    double getWorstLength();
 
     //bestLength
     double getBestLength();
 
     //bestRoute
-    void setBestRoute(route a);
+    void setBestRoute(route a, map &town, bool force);
     route getBestRoute();
 
     //currentFitnessSum
@@ -37,14 +40,14 @@ public:
     unsigned long long getCurrentFitnessSum();
 
     //Pool
-    void setPool(route a,int number, int whichPopulaton);
-    route getPool(int number, int whichPopulaton);
-    void createPool(route generation[generationSize], map &town);
+    void addSpeciman(route a, map &town);
+    route getSpeciman(int number);
+    std::vector<route> getPool();
+    void createPool(route generation[100], map &town);
+    void printSpeciman(int number);
+    void printAllSpecimen();
 
-    //currentGenration
-    void setCurrentGeneration(short a);
-    int getCurrentGeneration();
-    int switchGenerations();
+
 
 
 };
