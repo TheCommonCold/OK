@@ -3,7 +3,8 @@
 
 #include "route.h"
 #include "map.h"
-#include<vector>
+#include <vector>
+#include <random>
 class genePool{
 private:
     //2 rzeby an zmiane byly aktualna i nowa
@@ -16,7 +17,7 @@ private:
 public:
 
     //currentBestLength
-    void setCurrentBestLength(double a);
+    void setCurrentBestLength(double a, bool force);
     double getCurrentBestLength();
 
     //currentMaxFitness
@@ -47,7 +48,10 @@ public:
     void printSpeciman(int number);
     void printAllSpecimen();
 
-    void calcFitnessAll();
+
+    void calcFitnessAll(map &town);
+    int findParent();
+
 };
 
 

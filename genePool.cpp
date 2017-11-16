@@ -3,6 +3,7 @@
 void genePool::setMaxFitness(double a, bool force=false) {if (force||a>this->currentMaxFitness) this->currentMaxFitness=a;}
 
 
+
 double genePool::getMaxFitness(){    return this->currentMaxFitness; }
 //currentWorstLength
 void genePool::setWorstLength(double a, bool force = false){    if(force||a<this->currentWorstLength)this->currentWorstLength=a; }
@@ -41,7 +42,7 @@ void genePool::createPool(route generation[100], map &town){
     std::cout<<generation[0].getFitness()/this->currentMaxFitness;
 }
 
-void genePool::setCurrentBestLength(double a) {this->currentBestLength=a;}
+void genePool::setCurrentBestLength(double a, bool force) {if (force||a<this->currentBestLength)this->currentBestLength=a;}
 
 double genePool::getBestLength(){ return this->bestRoute.getLength();}
 
@@ -49,11 +50,7 @@ double genePool::getCurrentBestLength(){ return this->currentBestLength;}
 
 std::vector<route> genePool::getPool(){ return this->pool;}
 
-void genePool::calcFitnessAll() {
-    for (route &it: this->pool){
-        it.setFitness(1.1*this->currentWorstLength-it.getLength());
-    }
-}
+
 
 //Printy
 void genePool::printSpeciman(int number){

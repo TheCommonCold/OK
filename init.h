@@ -16,5 +16,5 @@
 
 double zachlannyArtura(map &towns, genePool &generations);
 int randomArtura(int min,int max,std::mt19937 mt);
-
+unsigned long long getRandomNumber( unsigned long long max);
 #endif //OK_PROJEKT_INIT_H

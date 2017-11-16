@@ -4,9 +4,7 @@ void route::setTown(int a, int i){
     this->route[i]=a;
 }
 
-int route::getTown(int i) {
-    return this->route[i];
-}
+int route::getTown(int i) {    return this->route[i];}
 
 void route::setRoute(std::vector<int> vec, map &town){
         this->route=vec;
@@ -27,13 +25,9 @@ double route::calcLength(map &town){
     return length;
 }
 
-void route::setLength(double a){
-    this->length=a;
-}
+void route::setLength(double a){    this->length=a;}
 
-double route::getLength(){
-    return this->length;
-}
+double route::getLength(){    return this->length;}
 
 void route::setFitness(double a) {     this->fitness=a; }
 double route::getFitness() {    return this->fitness; }

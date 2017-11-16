@@ -21,7 +21,6 @@ double zachlannyArtura(map &towns, genePool &generations) {
                     }
                 }
             }
-
             odwiedzone[minNeighbour]=true;
             path.push_back(minNeighbour);
         }
@@ -32,11 +31,18 @@ double zachlannyArtura(map &towns, genePool &generations) {
 
         curRoute.setRoute(path,towns);
         generations.addSpeciman(curRoute, towns);
-        generations.setBestRoute(generations.getPool().back(),towns,!i);
+        generations.setBestRoute(curRoute,towns,!i);
+        generations.setCurrentBestLength(curRoute.getLength(),!i);
+
         double length=curRoute.getLength();
         if (length>worstLength) worstLength=length;
     }
-    generations.setWorstLength(worstLength, true);
+    generations.calcFitnessAll(towns);
     return generations.getBestLength();
 }
 
+unsigned long long getRandomNumber(unsigned long long max){
+    static std::mt19937 mt(1729);
+    std::uniform_int_distribution<unsigned long long> dist(0, max);
+    return dist(mt);
+}
