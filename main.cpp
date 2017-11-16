@@ -5,7 +5,7 @@
 #include "route.h"
 #include "mutate.h"
 #include "init.h"
-#include "genePool.h";
+#include "genePool.h"
 
 int main() {
     map town;
