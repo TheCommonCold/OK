@@ -9,10 +9,10 @@ void map::load(){
     switch (number_of_location)
     {
         case 0:
-            location_of_files="C:\\Users\\Luker\\Documents\\GitHub\\OK\\plik.txt";
+            location_of_files="C:\\Users\\Luk3r\\Documents\\GitHub\\OK\\plik.txt";
             break;
         case 1:
-        std::cout<<"uzupełnij map.load()\n";
+            location_of_files="C:\\Users\\Luker\\Documents\\GitHub\\OK\\plik.txt";
             break;
         case 2:
             location_of_files="D:\\Artur\\Repos\\OK\\plik.txt";

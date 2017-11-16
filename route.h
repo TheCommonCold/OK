@@ -16,8 +16,8 @@ private:
     double length, fitness;
 
 public:
-    void setTown(int a, int i);
-    int getTown(int i);
+    void addRoute(int a);
+    int getRoute(int i);
 
     void setRoute(std::vector<int> vec, map &town);
     std::vector<int> getRoute();

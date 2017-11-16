@@ -1,5 +1,6 @@
 #include "init.h"
 #include "genePool.h"
+#include <iostream>
 
 double zachlannyArtura(map &towns, genePool &generations) {
     double worstLength=0;

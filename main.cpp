@@ -35,6 +35,6 @@ int main() {
 //    genePool pool;
 //    pool.calcMaxFitness(*&generation,*&town);
 //    pool.createPool(*&generation,*&town);
-    //std::cout<<generation[20].getTown(0)<<"  "<<generation[20].getFitness();
+    //std::cout<<generation[20].getRoute(0)<<"  "<<generation[20].getFitness();
     return 0;
 }

@@ -76,9 +76,9 @@ void genePool::createNewGeneration(map &town){
     int size=this->getPoolSize();
     route child;
     for(int i=0;i<size;i++){
-        child=mutateCross(this->getSpeciman(findParent()),this->getSpeciman(findParent()),child,*&town);
+        mutateCross(this->getSpeciman(findParent()),this->getSpeciman(findParent()),child,*&town);
         this->addSpeciman(child,*&town);
-        this->pool.erase(0,generationSize);
+        this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
     }
 
 }
