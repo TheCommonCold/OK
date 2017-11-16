@@ -5,14 +5,14 @@
 #include "route.h"
 #include "mutate.h"
 #include "init.h"
-#include "genePool.h"
+#include "genePool.h";
 
 int main() {
     map town;
     town.load();
     genePool generations;
     std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
-
+    populateGeneration(*&town,*&generations);
     int i=1;
     for (route &it: generations.getPool()){
         std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;

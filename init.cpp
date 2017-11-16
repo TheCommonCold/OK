@@ -1,10 +1,11 @@
 #include "init.h"
+#include "genePool.h"
 
 double zachlannyArtura(map &towns, genePool &generations) {
     double worstLength=0;
     int minNeighbour=0;
     bool odwiedzone[towns.getSize()];
-    for (int i=0;i<towns.getSize();i++)
+    for (int i=0;i<towns.getSize() && i<generationSize ;i++)
     {
         for (int j=0;j<towns.getSize();j++) odwiedzone[j]=false;
         odwiedzone[i]=true;
@@ -45,4 +46,14 @@ unsigned long long getRandomNumber(unsigned long long max){
     static std::mt19937 mt(1729);
     std::uniform_int_distribution<unsigned long long> dist(0, max);
     return dist(mt);
+}
+
+void populateGeneration( map &town, genePool &generation) {
+    int i=town.getSize();
+    route child;
+    while(i<generationSize){
+        mutateCross(generation.getSpeciman(generation.findParent()),generation.getSpeciman(generation.findParent()),*&child,*&town);
+        generation.addSpeciman(child,*&town);
+        i++;
+    }
 }

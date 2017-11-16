@@ -15,6 +15,7 @@ private:
 
 
 public:
+    int getPoolSize();
 
     //currentBestLength
     void setCurrentBestLength(double a, bool force);
@@ -47,6 +48,7 @@ public:
     void createPool(route generation[100], map &town);
     void printSpeciman(int number);
     void printAllSpecimen();
+    void createNewGeneration(map &town);
 
 
     void calcFitnessAll(map &town);

@@ -1,14 +1,13 @@
 #include "mutate.h"
+#include "init.h"
 
-void mutateCross(route a, route b, route &out, map &town, std::mt19937 mt,std::uniform_int_distribution<int> dis){
+void mutateCross(route a, route b, route &out, map &town){
     int i=1;
-    for (int i=0;i<100;i++) std::cout<<dis(mt)<<std::endl;
-    srand (time(NULL));
-    int target=dis(mt)%2;
+    int target=getRandomNumber(2);
     if(target)out.setTown(a.getTown(0), 0);
     else out.setTown(b.getTown(0), 0);
     while(i<town.getSize()){
-        target=rand()%2;
+        target=getRandomNumber(2);
         int j=0;
         if(target)
         {

@@ -6,31 +6,37 @@
 
 #IncludeRegexTransform: 
 
-/home/artur/Repos/CLion/OK/genePool.cpp
+C:/Users/Luker/Documents/GitHub/OK/genePool.cpp
 genePool.h
-/home/artur/Repos/CLion/OK/genePool.h
+C:/Users/Luker/Documents/GitHub/OK/genePool.h
+mutate.h
+C:/Users/Luker/Documents/GitHub/OK/mutate.h
+init.h
+C:/Users/Luker/Documents/GitHub/OK/init.h
 
-/home/artur/Repos/CLion/OK/genePool.h
+C:/Users/Luker/Documents/GitHub/OK/genePool.h
 route.h
-/home/artur/Repos/CLion/OK/route.h
+C:/Users/Luker/Documents/GitHub/OK/route.h
 map.h
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 vector
 -
 random
 -
 
-/home/artur/Repos/CLion/OK/genePoolArtur.cpp
+C:/Users/Luker/Documents/GitHub/OK/genePoolArtur.cpp
 genePool.h
-/home/artur/Repos/CLion/OK/genePool.h
+C:/Users/Luker/Documents/GitHub/OK/genePool.h
 init.h
-/home/artur/Repos/CLion/OK/init.h
+C:/Users/Luker/Documents/GitHub/OK/init.h
 
-/home/artur/Repos/CLion/OK/init.cpp
+C:/Users/Luker/Documents/GitHub/OK/init.cpp
 init.h
-/home/artur/Repos/CLion/OK/init.h
+C:/Users/Luker/Documents/GitHub/OK/init.h
+genePool.h
+C:/Users/Luker/Documents/GitHub/OK/genePool.h
 
-/home/artur/Repos/CLion/OK/init.h
+C:/Users/Luker/Documents/GitHub/OK/init.h
 ctime
 -
 random
@@ -38,15 +44,15 @@ random
 vector
 -
 map.h
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 route.h
-/home/artur/Repos/CLion/OK/route.h
+C:/Users/Luker/Documents/GitHub/OK/route.h
 mutate.h
-/home/artur/Repos/CLion/OK/mutate.h
+C:/Users/Luker/Documents/GitHub/OK/mutate.h
 genePool.h
-/home/artur/Repos/CLion/OK/genePool.h
+C:/Users/Luker/Documents/GitHub/OK/genePool.h
 
-/home/artur/Repos/CLion/OK/main.cpp
+C:/Users/Luker/Documents/GitHub/OK/main.cpp
 iostream
 -
 fstream
@@ -54,21 +60,21 @@ fstream
 vector
 -
 map.h
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 route.h
-/home/artur/Repos/CLion/OK/route.h
+C:/Users/Luker/Documents/GitHub/OK/route.h
 mutate.h
-/home/artur/Repos/CLion/OK/mutate.h
+C:/Users/Luker/Documents/GitHub/OK/mutate.h
 init.h
-/home/artur/Repos/CLion/OK/init.h
+C:/Users/Luker/Documents/GitHub/OK/init.h
 genePool.h
-/home/artur/Repos/CLion/OK/genePool.h
+C:/Users/Luker/Documents/GitHub/OK/genePool.h
 
-/home/artur/Repos/CLion/OK/map.cpp
+C:/Users/Luker/Documents/GitHub/OK/map.cpp
 map.h
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 iostream
 -
 fstream
@@ -78,25 +84,27 @@ time.h
 math.h
 -
 
-/home/artur/Repos/CLion/OK/mutate.cpp
+C:/Users/Luker/Documents/GitHub/OK/mutate.cpp
 mutate.h
-/home/artur/Repos/CLion/OK/mutate.h
+C:/Users/Luker/Documents/GitHub/OK/mutate.h
+init.h
+C:/Users/Luker/Documents/GitHub/OK/init.h
 
-/home/artur/Repos/CLion/OK/mutate.h
+C:/Users/Luker/Documents/GitHub/OK/mutate.h
 map.h
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 random
 -
 route.h
-/home/artur/Repos/CLion/OK/route.h
+C:/Users/Luker/Documents/GitHub/OK/route.h
 time.h
 -
 
-/home/artur/Repos/CLion/OK/route.cpp
+C:/Users/Luker/Documents/GitHub/OK/route.cpp
 route.h
-/home/artur/Repos/CLion/OK/route.h
+C:/Users/Luker/Documents/GitHub/OK/route.h
 
-/home/artur/Repos/CLion/OK/route.h
+C:/Users/Luker/Documents/GitHub/OK/route.h
 iostream
 -
 fstream
@@ -104,5 +112,5 @@ fstream
 vector
 -
 map.h
-/home/artur/Repos/CLion/OK/map.h
+C:/Users/Luker/Documents/GitHub/OK/map.h
 

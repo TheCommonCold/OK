@@ -1,4 +1,6 @@
 #include "genePool.h"
+#include "mutate.h"
+#include "init.h"
 
 void genePool::setMaxFitness(double a, bool force=false) {if (force||a>this->currentMaxFitness) this->currentMaxFitness=a;}
 
@@ -66,4 +68,17 @@ void genePool::printAllSpecimen() {
         this->printSpeciman(i);
         i++;
     }
+}
+
+int genePool::getPoolSize(){return this->pool.size();}
+
+void genePool::createNewGeneration(map &town){
+    int size=this->getPoolSize();
+    route child;
+    for(int i=0;i<size;i++){
+        child=mutateCross(this->getSpeciman(findParent()),this->getSpeciman(findParent()),child,*&town);
+        this->addSpeciman(child,*&town);
+        this->pool.erase(0,generationSize);
+    }
+
 }
