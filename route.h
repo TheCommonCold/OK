@@ -17,7 +17,9 @@ private:
 
 public:
     void addRoute(int a);
-    int getRoute(int i);
+    void setTown(int a,int i);
+    int getTown(int i);
+    void clearRoute();
 
     void setRoute(std::vector<int> vec, map &town);
     std::vector<int> getRoute();

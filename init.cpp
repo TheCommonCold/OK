@@ -53,7 +53,12 @@ void populateGeneration( map &town, genePool &generation) {
     int i=town.getSize();
     route child;
     while(i<generationSize){
-        mutateCross(generation.getSpeciman(generation.findParent()),generation.getSpeciman(generation.findParent()),*&child,*&town);
+        child.clearRoute();
+        breedCross(generation.getSpeciman(generation.findParent()), generation.getSpeciman(generation.findParent()),
+                   *&child, *&town);
+        mutate(child);
+        for(int i=0;i<town.getSize();i++)std::cout<<child.getTown(i)<<" ";
+        std::cout<<std::endl;
         generation.addSpeciman(child,*&town);
         i++;
     }

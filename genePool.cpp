@@ -22,6 +22,7 @@ double genePool::getWorstLength(){     return this->currentWorstLength; }
 void genePool::addSpeciman(route a, map &town){
     //ogarnąć
     this->pool.push_back(a);
+    this->pool.back().calcLength(town);
     double length=this->pool.back().getLength();
     if (length<this->currentBestLength)
     {
@@ -76,7 +77,8 @@ void genePool::createNewGeneration(map &town){
     int size=this->getPoolSize();
     route child;
     for(int i=0;i<size;i++){
-        mutateCross(this->getSpeciman(findParent()),this->getSpeciman(findParent()),child,*&town);
+        breedCross(this->getSpeciman(findParent()), this->getSpeciman(findParent()), child, *&town);
+        mutate(child);
         this->addSpeciman(child,*&town);
         this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
     }

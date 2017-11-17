@@ -13,28 +13,30 @@ int main() {
     genePool generations;
     std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
     populateGeneration(*&town,*&generations);
+    generations.calcFitnessAll(*&town);
     int i=1;
     for (route &it: generations.getPool()){
         std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
         i++;
     }
-    std::cout<<generations.getMaxFitness()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentFitnessSum()<<" "<<generations.getWorstLength()<<std::endl;
-    int arej[generations.getPool().size()];
-    for (int i=0;i<generations.getPool().size();i++) arej[i]=0;
-    for (int i=0;i<generations.getCurrentFitnessSum();i++)
-    {
-        int x=generations.findParent();
-        arej[x]++;
-    }
-    for (int i=0;i<generations.getPool().size();i++){
-        std::cout<<i+1<<" "<<arej[i]<<" "<<generations.getPool()[i].getFitness()<<std::endl;
-    }
+    generations.printSpeciman(43);
+//    std::cout<<generations.getMaxFitness()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentFitnessSum()<<" "<<generations.getWorstLength()<<std::endl;
+//    int arej[generations.getPool().size()];
+//    for (int i=0;i<generations.getPool().size();i++) arej[i]=0;
+//    for (int i=0;i<generations.getCurrentFitnessSum();i++)
+//    {
+//        int x=generations.findParent();
+//        arej[x]++;
+//    }
+//    for (int i=0;i<generations.getPool().size();i++){
+//        std::cout<<i+1<<" "<<arej[i]<<" "<<generations.getPool()[i].getFitness()<<std::endl;
+//    }
     //generations.printAllSpecimen();
     //std::cout<< generations.getWorstLength();
 //    populateGeneration(*&town,*&generation);
 //    genePool pool;
 //    pool.calcMaxFitness(*&generation,*&town);
 //    pool.createPool(*&generation,*&town);
-    //std::cout<<generation[20].getRoute(0)<<"  "<<generation[20].getFitness();
+    //std::cout<<generation[20].getTown(0)<<"  "<<generation[20].getFitness();
     return 0;
 }

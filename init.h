@@ -10,6 +10,7 @@
 #include "genePool.h"
 
 #define generationSize 50
+#define mutationChance 0.001
 
 #ifndef OK_PROJEKT_INIT_H
 #define OK_PROJEKT_INIT_H
