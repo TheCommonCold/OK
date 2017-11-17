@@ -69,6 +69,7 @@ bool checkVector(std::vector<int> vec,double length,map &town, genePool generati
         len+=town.getDistance(*it,*(it+1));
     }
     len+=town.getDistance(*vec.begin(),*(vec.end()-1));
+    std::cout<<len<<" "<<length<<"\n";
     if(len!=length){
         std::cout<<"Skopałem liczenie dlugosci\n";
         return false;
