@@ -57,9 +57,35 @@ void populateGeneration( map &town, genePool &generation) {
         breedCross(generation.getSpeciman(generation.findParent()), generation.getSpeciman(generation.findParent()),
                    *&child, *&town);
         mutate(child);
-        for(int i=0;i<town.getSize();i++)std::cout<<child.getTown(i)<<" ";
-        std::cout<<std::endl;
         generation.addSpeciman(child,*&town);
         i++;
     }
+}
+
+bool checkVector(std::vector<int> vec,double length,map &town, genePool generation){
+    double len=0;
+    //std::cout<<vec.size()<<std::endl;
+    for (auto it=vec.begin();it<vec.end()-1;it++){
+        len+=town.getDistance(*it,*(it+1));
+    }
+    len+=town.getDistance(*vec.begin(),*(vec.end()-1));
+    if(len!=length){
+        std::cout<<"Skopałem liczenie dlugosci\n";
+        return false;
+    }
+    bool odwiedzone[vec.size()];
+    for(int i=0;i<vec.size();i++){
+        odwiedzone[i]=false;
+    }
+    for(int i=0;i<vec.size();i++){
+        odwiedzone[vec[i]]=true;
+    }
+    for(int i=0;i<vec.size();i++){
+        if(!odwiedzone[i]){
+            std::cout<<"Nie odwiedza wszystkich miast\n";
+            return false;
+        }
+    }
+    std::cout<<"Skopałem liczenie dlugosci\n";
+    return false;
 }

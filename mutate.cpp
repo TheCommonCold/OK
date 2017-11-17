@@ -46,11 +46,11 @@ void breedCross(route a, route b, route &out, map &town){
                 break;
             }
         }
-        //std::cout<< out.getTown(i)<<" ";
+        std::cout<< out.getTown(i)<<" ";
         i++;
     }
-    //std::cout<< out.getTown(0)<<" ";
-    //std::cout<<std::endl;
+    std::cout<< out.getTown(0)<<" ";
+    std::cout<<std::endl;
 }
 
 void mutate(route &a) {
@@ -58,10 +58,10 @@ void mutate(route &a) {
     chance=(chance*1000);
     int mutate=0;
     int swapA,swapB,j;
-    for(int i=0;i<a.getLength();i++){
+    for(int i=0;i<a.getSize();i++){
         mutate=getRandomNumber(999)+1;
         if(mutate<=chance){
-            j=getRandomNumber(a.getLength()-1);
+            j=getRandomNumber(a.getSize()-1);
             swapA=a.getTown(i);
             swapB=a.getTown(j);
             a.setTown(swapB,i);

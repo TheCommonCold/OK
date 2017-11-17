@@ -16,10 +16,18 @@ int main() {
     generations.calcFitnessAll(*&town);
     int i=1;
     for (route &it: generations.getPool()){
+        checkVector(it.getRoute(),it.getLength(),town,generations);
         std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
         i++;
     }
-    generations.printSpeciman(43);
+    generations.createNewGeneration(*&town);
+    generations.calcFitnessAll(*&town);
+    i=1;
+    for (route &it: generations.getPool()){
+        std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
+        i++;
+    }
+    std::cout<<generations.getBestLength();
 //    std::cout<<generations.getMaxFitness()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentFitnessSum()<<" "<<generations.getWorstLength()<<std::endl;
 //    int arej[generations.getPool().size()];
 //    for (int i=0;i<generations.getPool().size();i++) arej[i]=0;

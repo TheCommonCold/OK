@@ -77,10 +77,14 @@ void genePool::createNewGeneration(map &town){
     int size=this->getPoolSize();
     route child;
     for(int i=0;i<size;i++){
-        breedCross(this->getSpeciman(findParent()), this->getSpeciman(findParent()), child, *&town);
-        mutate(child);
+        child.clearRoute();
+        breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()),
+                   *&child, *&town);
+        mutate(*&child);
+        for(int j=0;j<town.getSize();j++)std::cout<<child.getTown(j)<<" ";
+        std::cout<<std::endl;
         this->addSpeciman(child,*&town);
-        this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
     }
+    this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
 
 }

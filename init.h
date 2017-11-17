@@ -19,4 +19,5 @@ double zachlannyArtura(map &towns, genePool &generations);
 int randomArtura(int min,int max,std::mt19937 mt);
 unsigned long long getRandomNumber( unsigned long long max);
 void populateGeneration( map &town, genePool &generation);
+bool checkVector(std::vector<int> vec,double length,map &town, genePool generation);
 #endif //OK_PROJEKT_INIT_H

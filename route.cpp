@@ -36,5 +36,7 @@ void route::setLength(double a){    this->length=a;}
 
 double route::getLength(){    return this->length;}
 
+int route::getSize(){    return this->route.size();}
+
 void route::setFitness(double a) {     this->fitness=a; }
 double route::getFitness() {    return this->fitness; }
