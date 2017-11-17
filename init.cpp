@@ -70,8 +70,8 @@ bool checkVector(std::vector<int> vec,double length,map &town, genePool generati
     }
     len+=town.getDistance(*vec.begin(),*(vec.end()-1));
     std::cout<<len<<" "<<length<<"\n";
-    if(len!=length){
-        std::cout<<"Skopałem liczenie dlugosci\n";
+    if(len>length+0.00001||len<length-0.00001){
+        std::cout<<"Skopalem liczenie dlugosci "<<len<<" "<<length<<std::endl;
         return false;
     }
     bool odwiedzone[vec.size()];
@@ -87,6 +87,6 @@ bool checkVector(std::vector<int> vec,double length,map &town, genePool generati
             return false;
         }
     }
-    std::cout<<"Skopałem liczenie dlugosci\n";
+    //std::cout<<"Skopałem liczenie dlugosci\n";
     return false;
 }
