@@ -1,7 +1,7 @@
 #include "mutate.h"
 #include "init.h"
 
-void breedCross(route a, route b, route &out, map &town){
+void breedCross2(route a, route b, route &out, map &town){
     int i=1;
     int target=getRandomNumber(1);
     if(target)out.addRoute(a.getTown(0));
@@ -51,6 +51,34 @@ void breedCross(route a, route b, route &out, map &town){
     }
     std::cout<< out.getTown(0)<<" ";
     std::cout<<std::endl;
+}
+
+void breedCross(route a, route b, route &out, map &town){
+    if(getRandomNumber(1)==1){
+            route temp = a;
+            a = b;
+            b = temp;
+    }
+    bool visited[town.getSize()];
+    for (int j=0;j<town.getSize();j++) visited[j]=false;
+    int ratio=getRandomNumber(town.getSize());
+    int i=0;
+    for(;i<ratio;i++){
+        out.addRoute(a.getTown(i));
+        visited[a.getTown(i)]=true;
+        //std::cout<< out.getTown(i)<<" ";
+    }
+    int j=0;
+    while(i<town.getSize()){
+        if(visited[b.getTown(j)]==false){
+            out.addRoute(b.getTown(j));
+            visited[b.getTown(j)]=true;
+            //std::cout<< out.getTown(i)<<" ";
+            i++;
+        }
+        j++;
+    }
+    //std::cout<<std::endl;
 }
 
 void mutate(route &a) {

@@ -17,17 +17,20 @@ int main() {
     int i=1;
     for (route &it: generations.getPool()){
         checkVector(it.getRoute(),it.getLength(),town,generations);
-        std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
+        //std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
         i++;
     }
-    generations.createNewGeneration(*&town);
-    generations.calcFitnessAll(*&town);
-    i=1;
-    for (route &it: generations.getPool()){
-        std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
-        i++;
+    for(int j=0;j<50;j++){
+        generations.createNewGeneration(*&town);
+        generations.calcFitnessAll(*&town);
+        i=1;
+        for (route &it: generations.getPool()){
+            checkVector(it.getRoute(),it.getLength(),town,generations);
+            std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
+            i++;
+        }
+        std::cout<<generations.getBestLength()<<std::endl;
     }
-    std::cout<<generations.getBestLength();
 //    std::cout<<generations.getMaxFitness()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentFitnessSum()<<" "<<generations.getWorstLength()<<std::endl;
 //    int arej[generations.getPool().size()];
 //    for (int i=0;i<generations.getPool().size();i++) arej[i]=0;

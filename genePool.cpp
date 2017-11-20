@@ -81,8 +81,8 @@ void genePool::createNewGeneration(map &town){
         breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()),
                    *&child, *&town);
         mutate(*&child);
-        for(int j=0;j<town.getSize();j++)std::cout<<child.getTown(j)<<" ";
-        std::cout<<std::endl;
+        //for(int j=0;j<town.getSize();j++)std::cout<<child.getTown(j)<<" ";
+        //std::cout<<std::endl;
         this->addSpeciman(child,*&town);
     }
     this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
