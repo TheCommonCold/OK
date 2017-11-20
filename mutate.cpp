@@ -53,6 +53,10 @@ void breedCross2(route a, route b, route &out, map &town){
     std::cout<<std::endl;
 }
 
+void breedCrossadolf(route a, route b, route &out, map &town) {
+out=b;
+}
+
 void breedCross(route a, route b, route &out, map &town){
     if(getRandomNumber(1)==1){
             route temp = a;
@@ -81,8 +85,7 @@ void breedCross(route a, route b, route &out, map &town){
     //std::cout<<std::endl;
 }
 
-void mutate(route &a) {
-    float chance = mutationChance;
+void mutate(route &a,float chance) {
     chance=(chance*1000);
     int mutate=0;
     int swapA,swapB,j;
@@ -94,10 +97,11 @@ void mutate(route &a) {
             swapB=a.getTown(j);
             a.setTown(swapB,i);
             a.setTown(swapA,j);
-
         }
     }
 }
+
+
 void wypislosowych(std::mt19937 mt,std::uniform_int_distribution<int> dis){
     for(int i=0;i<100;i++) std::cout<<dis(mt)<<std::endl;
 }

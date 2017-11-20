@@ -5,13 +5,14 @@
 #include "map.h"
 #include <vector>
 #include <random>
+#include <algorithm>
 class genePool{
 private:
     //2 rzeby an zmiane byly aktualna i nowa
     std::vector<route> pool;
     double currentMaxFitness,currentWorstLength,currentBestLength;
     route bestRoute;
-    unsigned long long currentFitnessSum;
+    unsigned long long currentFitnessSum, currentLengthSum;
 
 
 public:
@@ -40,6 +41,7 @@ public:
     //currentFitnessSum
     void setCurrentFitnessSum(unsigned long long a);
     unsigned long long getCurrentFitnessSum();
+    unsigned long long getCurrentLengthSum() {return this->currentLengthSum;};
 
     //Pool
     void addSpeciman(route a, map &town);
@@ -48,7 +50,7 @@ public:
     void createPool(route generation[100], map &town);
     void printSpeciman(int number);
     void printAllSpecimen();
-    void createNewGeneration(map &town);
+    void createNewGeneration(map &town, bool zachowywac=false);
 
 
     void calcFitnessAll(map &town);

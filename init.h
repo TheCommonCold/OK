@@ -9,7 +9,7 @@
 #include "mutate.h"
 #include "genePool.h"
 
-#define generationSize 100
+#define generationSize 150
 #define mutationChance 0.002
 
 #ifndef OK_PROJEKT_INIT_H

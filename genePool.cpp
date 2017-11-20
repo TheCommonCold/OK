@@ -73,19 +73,31 @@ void genePool::printAllSpecimen() {
 
 int genePool::getPoolSize(){return this->pool.size();}
 
-void genePool::createNewGeneration(map &town){
+bool compareByLength(route a, route b)
+{
+    return a.getLength() > b.getLength();
+}
+
+
+void genePool::createNewGeneration(map &town, bool zachowywac){
     int size=this->getPoolSize();
     route child;
     for(int i=0;i<size;i++){
         child.clearRoute();
         breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()),
                    *&child, *&town);
-        mutate(*&child);
+        mutate(*&child,0.1);
         //for(int j=0;j<town.getSize();j++)std::cout<<child.getTown(j)<<" ";
         //std::cout<<std::endl;
         this->addSpeciman(child,*&town);
     }
     //tutaj trzeba by wywalić n najgorszych osobników (n zależne od parametru z #define w init.h) zamiast tych wszystkich starych których wyjebuje poniżej
+    if(zachowywac){
+        std::sort(pool.begin(), pool.end(), compareByLength);
+//        for (auto it:this->pool)std::cout<<it.getLength()<<std::endl;
+
+    }
     this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
+//    for (auto it:this->pool)std::cout<<it.getLength()<<std::endl;
 
 }

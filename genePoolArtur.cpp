@@ -16,18 +16,22 @@ int genePool::findParent(){
 
 void genePool::calcFitnessAll(map &town) {
     int length;
+    bool pierwszy=true;
     for (route &it: this->pool){
         length=it.getLength();
         if(length>this->currentWorstLength)this->currentWorstLength=length;
-        if(length<this->currentBestLength){
+        if(length<this->currentBestLength||pierwszy){
             this->currentBestLength=length;
+            pierwszy=false;
             if(length<this->bestRoute.getLength()) this->bestRoute.setRoute(it.getRoute(),town);
         }
     }
-    unsigned long long FitnessSum=0;
+    unsigned long long FitnessSum=0,LengthSum=0;
     for (route &it: this->pool){
         it.setFitness(1.1*this->currentWorstLength-it.getLength());
         FitnessSum+=it.getFitness();
+        LengthSum+=it.getLength();
     }
+    this->currentLengthSum=LengthSum;
     this->currentFitnessSum=FitnessSum;
 }

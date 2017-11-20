@@ -8,7 +8,6 @@
 #include <fstream>
 #include <vector>
 #include "map.h"
-
 class route {
 
 private:
