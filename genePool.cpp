@@ -85,6 +85,7 @@ void genePool::createNewGeneration(map &town){
         //std::cout<<std::endl;
         this->addSpeciman(child,*&town);
     }
+    //tutaj trzeba by wywalić n najgorszych osobników (n zależne od parametru z #define w init.h) zamiast tych wszystkich starych których wyjebuje poniżej
     this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
 
 }
