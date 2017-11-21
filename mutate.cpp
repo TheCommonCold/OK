@@ -57,46 +57,51 @@ void breedCrossadolf(route a, route b, route &out, map &town) {
 out=b;
 }
 
-void breedCross(route a, route b, route &out, map &town){
+void breedCross(route a, route b, route* out, map* town){
     if(getRandomNumber(1)==1){
             route temp = a;
             a = b;
             b = temp;
     }
-    bool visited[town.getSize()];
-    for (int j=0;j<town.getSize();j++) visited[j]=false;
-    int ratio=getRandomNumber(town.getSize());
+    bool visited[town->getSize()];
+    for (int j=0;j<town->getSize();j++) visited[j]=false;
+    int ratio=getRandomNumber(town->getSize());
     int i=0;
     for(;i<ratio;i++){
-        out.addRoute(a.getTown(i));
+        out->addRoute(a.getTown(i));
         visited[a.getTown(i)]=true;
-        //std::cout<< out.getTown(i)<<" ";
+        //std::cout<< out->getTown(i)<<" ";
     }
     int j=0;
-    while(i<town.getSize()){
+    while(i<town->getSize()){
         if(visited[b.getTown(j)]==false){
-            out.addRoute(b.getTown(j));
+            out->addRoute(b.getTown(j));
             visited[b.getTown(j)]=true;
-            //std::cout<< out.getTown(i)<<" ";
+            //std::cout<< out->getTown(i)<<" ";
             i++;
         }
         j++;
     }
+    mutate(out);
     //std::cout<<std::endl;
 }
 
-void mutate(route &a,float chance) {
-    chance=(chance*1000);
-    int mutate=0;
+void test(route a, route b, route out, map town){
+    std::cout<<"test"<<std::endl;
+}
+
+void mutate(route* a) {
+    double chance=(genomMutationChance/(a->getSize())*1000000);
+    long long mutate=0;
     int swapA,swapB,j;
-    for(int i=0;i<a.getSize();i++){
-        mutate=getRandomNumber(999)+1;
+    for(int i=0;i<a->getSize();i++){
+        mutate=getRandomNumber(1000000-1)+1;
         if(mutate<=chance){
-            j=getRandomNumber(a.getSize()-1);
-            swapA=a.getTown(i);
-            swapB=a.getTown(j);
-            a.setTown(swapB,i);
-            a.setTown(swapA,j);
+            j=getRandomNumber(a->getSize()-1);
+            swapA=a->getTown(i);
+            swapB=a->getTown(j);
+            a->setTown(swapB,i);
+            a->setTown(swapA,j);
         }
     }
 }

@@ -21,16 +21,12 @@ int main() {
         i++;
     }
     int j=0;
-    while(j>-1){
+    while(j<numberOfGenerations){
         generations.createNewGeneration(*&town,true);
-
         generations.calcFitnessAll(*&town);
-        i=1;
-        for (route &it: generations.getPool()){
-            checkVector(it.getRoute(),it.getLength(),town,generations);
-           // std::cout<<i<<" "<<it.getLength()<<" "<<it.getFitness()<<std::endl;
-            i++;
-        }
+        //for (route &it: generations.getPool()){
+        //    checkVector(it.getRoute(),it.getLength(),town,generations);
+        //}
         if(j%100==0){
             std::cout<<generations.getBestLength()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentLengthSum()<<std::endl;
             for(auto it:generations.getBestRoute().getRoute()){

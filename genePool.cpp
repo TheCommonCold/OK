@@ -81,15 +81,23 @@ bool compareByLength(route a, route b)
 
 void genePool::createNewGeneration(map &town, bool zachowywac){
     int size=this->getPoolSize();
-    route child;
-    for(int i=0;i<size;i++){
-        child.clearRoute();
-        breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()),
-                   *&child, *&town);
-        mutate(*&child,0.1);
-        //for(int j=0;j<town.getSize();j++)std::cout<<child.getTown(j)<<" ";
-        //std::cout<<std::endl;
-        this->addSpeciman(child,*&town);
+    int i=0;
+    while(i<size){
+        std::vector<std::thread> threads;
+        route children[numberOfThreads];
+        int j=0;
+        while (j<numberOfThreads && i<size) {
+            children[j].clearRoute();
+            threads.push_back(std::thread(breedCross,this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town));
+            //breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town);
+            j++;
+            i++;
+        }
+        j--;
+        for (auto& th : threads)th.join();
+        for(;j>=0;j--) {
+            this->addSpeciman(children[j], *&town);
+        }
     }
     //tutaj trzeba by wywalić n najgorszych osobników (n zależne od parametru z #define w init.h) zamiast tych wszystkich starych których wyjebuje poniżej
     if(zachowywac){

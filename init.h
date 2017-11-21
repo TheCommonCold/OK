@@ -4,13 +4,16 @@
 #include <ctime>
 #include<random>
 #include <vector>
+#include <thread>
 #include "map.h"
 #include "route.h"
 #include "mutate.h"
 #include "genePool.h"
 
 #define generationSize 150
-#define mutationChance 0.002
+#define genomMutationChance 0.145
+#define numberOfThreads 128
+#define numberOfGenerations 1000
 
 #ifndef OK_PROJEKT_INIT_H
 #define OK_PROJEKT_INIT_H
