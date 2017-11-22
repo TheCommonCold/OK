@@ -57,12 +57,7 @@ void breedCrossadolf(route a, route b, route &out, map &town) {
 out=b;
 }
 
-void breedCross(route a, route b, route* out, map* town){
-    if(getRandomNumber(1)==1){
-            route temp = a;
-            a = b;
-            b = temp;
-    }
+void breedCross(route a, route b, route* out, map* town, int overDrive,double chance){
     bool visited[town->getSize()];
     for (int j=0;j<town->getSize();j++) visited[j]=false;
     int ratio=getRandomNumber(town->getSize());
@@ -82,16 +77,35 @@ void breedCross(route a, route b, route* out, map* town){
         }
         j++;
     }
-    mutate(out);
+    mutate(out,chance);
+    if(overDrive==1)fix(out, *town);
     //std::cout<<std::endl;
 }
 
-void test(route a, route b, route out, map town){
-    std::cout<<"test"<<std::endl;
+void fix(route* a,map town) {
+    for(int i=0;i<a->getSize();i++)
+    {
+        for(int j=0;j<a->getSize();j++)
+        {
+            if(j!=i){
+                int originalLength=a->getLength();
+                int temp = a->getTown(i);
+                a->setTown(a->getTown(j),i);
+                a->setTown(temp,j);
+                if(originalLength<a->calcLength(town)){
+                    temp = a->getTown(i);
+                    a->setTown(a->getTown(j),i);
+                    a->setTown(temp,j);
+                }
+
+
+            }
+        }
+    }
 }
 
-void mutate(route* a) {
-    double chance=(genomMutationChance/(a->getSize())*1000000);
+void mutate(route* a,double MutationChance) {
+    double chance=(MutationChance/(a->getSize())*1000000);
     long long mutate=0;
     int swapA,swapB,j;
     for(int i=0;i<a->getSize();i++){
@@ -110,3 +124,4 @@ void mutate(route* a) {
 void wypislosowych(std::mt19937 mt,std::uniform_int_distribution<int> dis){
     for(int i=0;i<100;i++) std::cout<<dis(mt)<<std::endl;
 }
+

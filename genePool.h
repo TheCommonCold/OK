@@ -50,7 +50,7 @@ public:
     void createPool(route generation[100], map &town);
     void printSpeciman(int number);
     void printAllSpecimen();
-    void createNewGeneration(map &town, bool zachowywac=false);
+    void createNewGeneration(map &town,int overDrive,double chance, bool zachowywac=false);
 
 
     void calcFitnessAll(map &town);

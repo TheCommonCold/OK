@@ -79,7 +79,7 @@ bool compareByLength(route a, route b)
 }
 
 
-void genePool::createNewGeneration(map &town, bool zachowywac){
+void genePool::createNewGeneration(map &town,int overDrive,double chance, bool zachowywac){
     int size=this->getPoolSize();
     int i=0;
     while(i<size){
@@ -88,8 +88,10 @@ void genePool::createNewGeneration(map &town, bool zachowywac){
         int j=0;
         while (j<numberOfThreads && i<size) {
             children[j].clearRoute();
-            threads.push_back(std::thread(breedCross,this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town));
+            threads.push_back(std::thread(breedCross,this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town,overDrive,chance));
             //breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town);
+            //children[j]=this->getSpeciman(j);
+            //threads.push_back(std::thread(fix,&children[j], town));
             j++;
             i++;
         }

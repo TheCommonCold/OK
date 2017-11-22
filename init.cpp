@@ -55,7 +55,7 @@ void populateGeneration( map &town, genePool &generation) {
     while(i<generationSize){
         child.clearRoute();
         breedCross(generation.getSpeciman(generation.findParent()), generation.getSpeciman(generation.findParent()),
-                   &child, &town);
+                   &child, &town,0,genomMutationChance*2);
         generation.addSpeciman(child,*&town);
         i++;
     }

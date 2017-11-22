@@ -21,9 +21,21 @@ int main() {
         i++;
     }
     int j=0;
+    bool overDrive =0;
+    int failCounter=0;
+    int previousLengthSum;
+    double chance=genomMutationChance;
     while(j<numberOfGenerations){
-        generations.createNewGeneration(*&town,true);
+        previousLengthSum=generations.getCurrentLengthSum();
+        if(failCounter>=overdDriveThreshhold){
+            overDrive=1;
+            failCounter=0;
+            chance=chance+0.1;
+        }
+        generations.createNewGeneration(*&town,overDrive,chance,true);
         generations.calcFitnessAll(*&town);
+        if(generations.getCurrentLengthSum()==previousLengthSum)failCounter++;
+        overDrive=0;
         //for (route &it: generations.getPool()){
         //    checkVector(it.getRoute(),it.getLength(),town,generations);
         //}
