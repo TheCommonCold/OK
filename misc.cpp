@@ -1,4 +1,4 @@
-#include "init.h"
+#include "misc.h"
 #include "genePool.h"
 #include <iostream>
 
@@ -54,8 +54,8 @@ void populateGeneration( map &town, genePool &generation) {
     route child;
     while(i<generationSize){
         child.clearRoute();
-        breedCross(generation.getSpeciman(generation.findParent()), generation.getSpeciman(generation.findParent()),
-                   &child, &town,0,genomMutationChance*2);
+        generateRandomMember(child,town);
+        //breedCross(generation.getSpeciman(generation.findParent()),generation.getSpeciman(generation.findParent()),&child,&town,genomMutationChance*2);
         generation.addSpeciman(child,*&town);
         i++;
     }

@@ -1,5 +1,5 @@
 #include "mutate.h"
-#include "init.h"
+#include "misc.h"
 
 void breedCross2(route a, route b, route &out, map &town){
     int i=1;
@@ -57,7 +57,7 @@ void breedCrossadolf(route a, route b, route &out, map &town) {
 out=b;
 }
 
-void breedCross(route a, route b, route* out, map* town, int overDrive,double chance){
+void breedCross(route a, route b, route* out, map* town,double chance){
     bool visited[town->getSize()];
     for (int j=0;j<town->getSize();j++) visited[j]=false;
     int ratio=getRandomNumber(town->getSize());
@@ -77,34 +77,47 @@ void breedCross(route a, route b, route* out, map* town, int overDrive,double ch
         }
         j++;
     }
-    mutate(out,chance);
-    if(overDrive==1)fix(out, *town);
+    mutate(out,chance,*town);
     //std::cout<<std::endl;
 }
 
-void fix(route* a,map town) {
+void generateRandomMember(route &child,map &town){
+    for(int i=0;i<town.getSize();i++)
+    {
+        child.addRoute(i);
+    }
+    int swapA,swapB,j;
+    for(int i=0;i<child.getSize();i++){
+        j=getRandomNumber(child.getSize()-1);
+        swapA=child.getTown(i);
+        swapB=child.getTown(j);
+        child.setTown(swapB,i);
+        child.setTown(swapA,j);
+    }
+}
+
+void fix(route* a,map* town, bool* change) {
+    change=0;
     for(int i=0;i<a->getSize();i++)
     {
-        for(int j=0;j<a->getSize();j++)
+        for(int j=i+1;j<a->getSize();j++)
         {
-            if(j!=i){
-                int originalLength=a->getLength();
-                int temp = a->getTown(i);
+            double originalLength=a->calcLength(*town);
+            int temp = a->getTown(i);
+            a->setTown(a->getTown(j),i);
+            a->setTown(temp,j);
+            if(originalLength<a->calcLength(*town)){
+                temp = a->getTown(i);
                 a->setTown(a->getTown(j),i);
                 a->setTown(temp,j);
-                if(originalLength<a->calcLength(town)){
-                    temp = a->getTown(i);
-                    a->setTown(a->getTown(j),i);
-                    a->setTown(temp,j);
-                }
-
-
-            }
+            }else *change=true;
         }
     }
 }
 
-void mutate(route* a,double MutationChance) {
+void mutate(route* a,double MutationChance,map &town) {
+    route b;
+    b.setRoute(a->getRoute(),town);
     double chance=(MutationChance/(a->getSize())*1000000);
     long long mutate=0;
     int swapA,swapB,j;
@@ -118,6 +131,7 @@ void mutate(route* a,double MutationChance) {
             a->setTown(swapA,j);
         }
     }
+    if(a->calcLength(town)>b.calcLength(town))a=&b;
 }
 
 

@@ -1,6 +1,6 @@
 #include "genePool.h"
 #include "mutate.h"
-#include "init.h"
+#include "misc.h"
 
 void genePool::setMaxFitness(double a, bool force=false) {if (force||a>this->currentMaxFitness) this->currentMaxFitness=a;}
 
@@ -79,7 +79,7 @@ bool compareByLength(route a, route b)
 }
 
 
-void genePool::createNewGeneration(map &town,int overDrive,double chance, bool zachowywac){
+void genePool::createNewGeneration(map &town,double chance, bool zachowywac){
     int size=this->getPoolSize();
     int i=0;
     while(i<size){
@@ -88,7 +88,7 @@ void genePool::createNewGeneration(map &town,int overDrive,double chance, bool z
         int j=0;
         while (j<numberOfThreads && i<size) {
             children[j].clearRoute();
-            threads.push_back(std::thread(breedCross,this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town,overDrive,chance));
+            threads.push_back(std::thread(breedCross,this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town,chance));
             //breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town);
             //children[j]=this->getSpeciman(j);
             //threads.push_back(std::thread(fix,&children[j], town));
@@ -110,4 +110,35 @@ void genePool::createNewGeneration(map &town,int overDrive,double chance, bool z
     this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
 //    for (auto it:this->pool)std::cout<<it.getLength()<<std::endl;
 
+}
+
+void genePool::improve(map &town)
+{
+    int size=this->getPoolSize();
+    while(true)
+    {
+        bool change=true;
+        int i=0;
+        while(i<size) {
+            //std::vector<std::thread> threads;
+            int j = 0;
+            route children[numberOfThreads];
+            while (j < numberOfThreads && i < size) {
+                children[j].setRoute(this->getSpeciman(i).getRoute(),town);
+                //for(int a=0;a<children[j].getSize();a++)std::cout<<children[j].getTown(a)<<" ";
+                //std::cout<<std::endl;
+                fix(&children[j], &town,&change);
+                j++;
+                i++;
+            }
+            j--;
+            //for (auto &th : threads)th.join();
+            for(;j>=0;j--) {
+                this->addSpeciman(children[j], *&town);
+            }
+        }
+        this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
+        this->calcFitnessAll(town);
+        if(change==true)break;
+    }
 }

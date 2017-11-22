@@ -4,7 +4,7 @@
 #include "map.h"
 #include "route.h"
 #include "mutate.h"
-#include "init.h"
+#include "misc.h"
 #include "genePool.h"
 
 int main() {
@@ -14,6 +14,7 @@ int main() {
     std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
     populateGeneration(*&town,*&generations);
     generations.calcFitnessAll(*&town);
+    //generations.improve(town);
     int i=1;
     for (route &it: generations.getPool()){
         checkVector(it.getRoute(),it.getLength(),town,generations);
@@ -21,21 +22,19 @@ int main() {
         i++;
     }
     int j=0;
-    bool overDrive =0;
     int failCounter=0;
     int previousLengthSum;
     double chance=genomMutationChance;
     while(j<numberOfGenerations){
         previousLengthSum=generations.getCurrentLengthSum();
         if(failCounter>=overdDriveThreshhold){
-            overDrive=1;
             failCounter=0;
             chance=chance+0.1;
+            //generations.improve(town);
         }
-        generations.createNewGeneration(*&town,overDrive,chance,true);
+        generations.createNewGeneration(*&town,chance,true);
         generations.calcFitnessAll(*&town);
         if(generations.getCurrentLengthSum()==previousLengthSum)failCounter++;
-        overDrive=0;
         //for (route &it: generations.getPool()){
         //    checkVector(it.getRoute(),it.getLength(),town,generations);
         //}

@@ -2,7 +2,7 @@
 // Created by artur on 11/16/17.
 //
 #include "genePool.h"
-#include "init.h"
+#include "misc.h"
 int genePool::findParent(){
     auto FitnessSum=this->getCurrentFitnessSum();
     int wylosowana=getRandomNumber(FitnessSum);
