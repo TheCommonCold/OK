@@ -11,5 +11,6 @@ void wypislosowych(std::mt19937 mt,std::uniform_int_distribution<int> dis);
 void mutate(route* a,double mutationChance,map &town);
 void fix(route* a,map* town, bool* change);
 void generateRandomMember(route &child,map &town);
+void breedER(route a, route b,route* out, map* town,double chance);
 
 #endif //OK_PROJEKT_MUTATE_H

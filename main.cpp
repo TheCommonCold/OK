@@ -14,6 +14,24 @@ int main() {
     std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
     populateGeneration(*&town,*&generations);
     generations.calcFitnessAll(*&town);
+    route a;
+    route b;
+    route out;
+    std::ifstream wczytaj("C:\\Users\\Luker\\Documents\\GitHub\\OK\\test.txt");
+    for(int i=0;i<town.getSize();i++)
+    {
+        int temp;
+        wczytaj>>temp;
+        a.addRoute(temp);
+    }
+    for(int i=0;i<town.getSize();i++)
+    {
+        int temp;
+        wczytaj>>temp;
+        b.addRoute(temp);
+    }
+    breedER(a, b, &out, &town,0);
+
     //generations.improve(town);
     int i=1;
     for (route &it: generations.getPool()){
@@ -26,6 +44,7 @@ int main() {
     int previousLengthSum;
     double chance=genomMutationChance;
     while(j<numberOfGenerations){
+        std::cout<<j<<std::endl;
         previousLengthSum=generations.getCurrentLengthSum();
         if(failCounter>=overdDriveThreshhold){
             failCounter=0;

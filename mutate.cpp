@@ -79,33 +79,104 @@ void breedCross(route a, route b, route* out, map* town,double chance){
 }
 
 void breedER(route a, route b,route* out, map* town,double chance){
-    bool neighbourList[town->getSize()][town->getSize()];
-    neighbourList[a.getTown(0)][a.getTown(town->getSize()-1)]=1;
-    neighbourList[a.getTown(a.getTown(town->getSize()-1))][0]=1;
-    neighbourList[b.getTown(0)][b.getTown(town->getSize()-1)]=1;
-    neighbourList[b.getTown(b.getTown(town->getSize()-1))][0]=1;
+    int n=a.getTown(0);
     for(int i=0;i<town->getSize();i++){
-        for(int j=1;j<town->getSize()-1;j++)
-        {
-            if(a.getTown(j-1)==i)
-            {
-                neighbourList[i][a.getTown(j-1)]=1;
-            }
-            if(b.getTown(j-1)==1)
-            {
-                neighbourList[i][b.getTown(j-1)]=1;
-            }
-            if(a.getTown(j+1)==i)
-            {
-                neighbourList[i][a.getTown(j+1)]=1;
-            }
-            if(b.getTown(j+1)==1)
-            {
-                neighbourList[i][b.getTown(j+1)]=1;
-            }
+        std::cout<<a.getTown(i)<<" ";
+    }
+    std::cout<<std::endl;
+    for(int i=0;i<town->getSize();i++){
+        std::cout<<b.getTown(i)<<" ";
+    }
+    std::cout<<std::endl;
+    std::cout<<std::endl;
+    bool neighbourList[town->getSize()][town->getSize()];
+    bool visited[town->getSize()];
+    int neighbourCount[town->getSize()];
+    for(int i=0;i<town->getSize();i++)
+    {
+        visited[i]=false;
+        neighbourCount[i]=0;
+        for(int j=0;j<town->getSize();j++){
+            neighbourList[i][j]=false;
         }
     }
-    //mutate(out,chance,*town);
+    neighbourCount[a.getTown(0)]++;
+    neighbourCount[a.getTown(town->getSize()-1)]++;
+    neighbourCount[b.getTown(0)]++;
+    neighbourCount[b.getTown(town->getSize()-1)]++;
+    neighbourList[a.getTown(town->getSize()-1)][a.getTown(0)]=true;
+    neighbourList[a.getTown(0)][a.getTown(town->getSize()-1)]=true;
+    neighbourList[b.getTown(town->getSize()-1)][b.getTown(0)]=true;
+    neighbourList[b.getTown(0)][b.getTown(town->getSize()-1)]=true;
+    for(int i=0;i<town->getSize()-1;i++){
+        if(a.getTown(i)!=a.getTown(i+1) && neighbourList[a.getTown(i)][a.getTown(i+1)]==false){
+            neighbourCount[a.getTown(i)]++;
+            neighbourCount[a.getTown(i+1)]++;
+            neighbourList[a.getTown(i)][a.getTown(i+1)]=true;
+            neighbourList[a.getTown(i+1)][a.getTown(i)]=true;
+        }
+        if(b.getTown(i)!=b.getTown(i+1) && neighbourList[b.getTown(i)][b.getTown(i+1)]==false){
+            neighbourCount[b.getTown(i)]++;
+            neighbourCount[b.getTown(i+1)]++;
+            neighbourList[b.getTown(i)][b.getTown(i+1)]=true;
+            neighbourList[b.getTown(i+1)][b.getTown(i)]=true;
+        }
+    }
+//    for(int i=0;i<town->getSize();i++)
+//    {
+//        for(int j=0;j<town->getSize();j++){
+//            std::cout<<neighbourList[i][j]<<" ";
+//        }
+//        std::cout<<"   "<<neighbourCount[i];
+//        std::cout<<std::endl;
+//    }
+    out->addRoute(n);
+    std::vector<int> randomList;
+    while(out->getSize()<town->getSize())
+    {
+        randomList.clear();
+        visited[n]=true;
+        for(int i=0;i<town->getSize();i++)
+        {
+            if(neighbourList[i][n]==1)neighbourCount[i]--;
+            neighbourList[i][n]=0;
+        }
+        if(neighbourCount[n]>0){
+            std::cout<<"test1"<<std::endl;
+            int smallestValue=town->getSize();
+            for(int i=0;i<town->getSize();i++){
+                if(neighbourList[n][i]==1){
+                    if(neighbourCount[i]<smallestValue){
+                        smallestValue=neighbourCount[i];
+                    }
+                }
+            }
+            for(int i=0;i<town->getSize();i++){
+                std::cout<<smallestValue<<std::endl;
+                if(neighbourCount[i]==smallestValue && neighbourList[n][i]==1)randomList.push_back(i);
+            }
+        }else
+        {
+            for(int i=0;i<town->getSize();i++)
+            {
+                if(visited[i]==0)randomList.push_back(i);
+            }
+        }
+        neighbourCount[n]=0;
+//        for(int i=0;i<town->getSize();i++){
+//            std::cout<<visited[i]<<" ";
+//        }
+//        std::cout<<std::endl;
+        std::cout<<randomList.size()<<" "<<std::endl;
+        n=randomList[getRandomNumber(randomList.size()-1)];
+        out->addRoute(n);
+    }
+    for(int i=0;i<town->getSize();i++){
+        std::cout<<out->getTown(i)<<" ";
+    }
+    std::cout<<std::endl;
+    std::cout<<std::endl;
+    mutate(out,chance,*town);
 }
 
 void generateRandomMember(route &child,map &town){

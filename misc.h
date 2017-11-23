@@ -10,10 +10,10 @@
 #include "mutate.h"
 #include "genePool.h"
 
-#define generationSize 1000
-#define genomMutationChance 0.5
-#define numberOfThreads 128
-#define numberOfGenerations 5000
+#define generationSize 52
+#define genomMutationChance 0.1
+#define numberOfThreads 1
+#define numberOfGenerations 0
 #define overdDriveThreshhold 200
 
 #ifndef OK_PROJEKT_INIT_H
