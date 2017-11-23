@@ -14,6 +14,22 @@ int genePool::findParent(){
     }
 }
 
+int genePool::findParentNormalized(){
+    int sum=0;
+    int i=0;
+    for(i=0;i<this->getSpeciman(0).getSize();i++)
+    {
+        sum=sum+i;
+    }
+    int wylosowana=getRandomNumber(sum);
+    i--;
+    while(true){
+        wylosowana=wylosowana-i;
+        if (wylosowana<=0)return i;
+        i--;
+    }
+}
+
 void genePool::calcFitnessAll(map &town) {
     int length;
     bool pierwszy=true;

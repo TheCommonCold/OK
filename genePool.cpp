@@ -73,13 +73,19 @@ void genePool::printAllSpecimen() {
 
 int genePool::getPoolSize(){return this->pool.size();}
 
-bool compareByLength(route a, route b)
+bool compareByLengthDesc(route a, route b)
 {
     return a.getLength() > b.getLength();
 }
 
+bool compareByLengthAsc(route a, route b)
+{
+    return a.getLength() < b.getLength();
+}
+
 
 void genePool::createNewGeneration(map &town,double chance, bool zachowywac){
+    //std::sort(pool.begin(), pool.end(), compareByLengthAsc);
     int size=this->getPoolSize();
     int i=0;
 //    for(int j=0;j<town.getSize();j++){
@@ -109,7 +115,7 @@ void genePool::createNewGeneration(map &town,double chance, bool zachowywac){
     }
     //tutaj trzeba by wywalić n najgorszych osobników (n zależne od parametru z #define w init.h) zamiast tych wszystkich starych których wyjebuje poniżej
     if(zachowywac){
-        std::sort(pool.begin(), pool.end(), compareByLength);
+        std::sort(pool.begin(), pool.end(), compareByLengthDesc);
 //        for (auto it:this->pool)std::cout<<it.getLength()<<std::endl;
 
     }

@@ -217,11 +217,11 @@ void fix(route* a,map* town, bool* change) {
 void mutate(route* a,double MutationChance,map &town) {
     route b;
     b.setRoute(a->getRoute(),town);
-    double chance=(MutationChance/(a->getSize())*1000000);
+    double chance=(MutationChance*1000);
     long long mutate=0;
     int swapA,swapB,j;
     for(int i=0;i<a->getSize();i++){
-        mutate=getRandomNumber(1000000-1)+1;
+        mutate=getRandomNumber(1000-1)+1;
         if(mutate<=chance){
             j=getRandomNumber(a->getSize()-1);
             swapA=a->getTown(i);

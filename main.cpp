@@ -26,12 +26,16 @@ int main() {
     int failCounter=0;
     int previousLengthSum;
     double chance=genomMutationChance;
-    while(j<numberOfGenerations){
+    while(true){
         previousLengthSum=generations.getCurrentLengthSum();
         if(failCounter>=overdDriveThreshhold){
             failCounter=0;
             chance=chance+0.1;
-            //generations.improve(town);
+            generations.improve(town);
+        }
+        else{
+            chance=genomMutationChance;
+            failCounter=0;
         }
         generations.createNewGeneration(*&town,chance,true);
         generations.calcFitnessAll(*&town);

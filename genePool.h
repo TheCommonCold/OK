@@ -55,6 +55,7 @@ public:
 
     void calcFitnessAll(map &town);
     int findParent();
+    int findParentNormalized();
     void improve(map& town);
 
 };
