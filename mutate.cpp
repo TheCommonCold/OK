@@ -65,20 +65,47 @@ void breedCross(route a, route b, route* out, map* town,double chance){
     for(;i<ratio;i++){
         out->addRoute(a.getTown(i));
         visited[a.getTown(i)]=true;
-        //std::cout<< out->getTown(i)<<" ";
     }
     int j=0;
     while(i<town->getSize()){
         if(visited[b.getTown(j)]==false){
             out->addRoute(b.getTown(j));
             visited[b.getTown(j)]=true;
-            //std::cout<< out->getTown(i)<<" ";
             i++;
         }
         j++;
     }
     mutate(out,chance,*town);
-    //std::cout<<std::endl;
+}
+
+void breedER(route a, route b,route* out, map* town,double chance){
+    bool neighbourList[town->getSize()][town->getSize()];
+    neighbourList[a.getTown(0)][a.getTown(town->getSize()-1)]=1;
+    neighbourList[a.getTown(a.getTown(town->getSize()-1))][0]=1;
+    neighbourList[b.getTown(0)][b.getTown(town->getSize()-1)]=1;
+    neighbourList[b.getTown(b.getTown(town->getSize()-1))][0]=1;
+    for(int i=0;i<town->getSize();i++){
+        for(int j=1;j<town->getSize()-1;j++)
+        {
+            if(a.getTown(j-1)==i)
+            {
+                neighbourList[i][a.getTown(j-1)]=1;
+            }
+            if(b.getTown(j-1)==1)
+            {
+                neighbourList[i][b.getTown(j-1)]=1;
+            }
+            if(a.getTown(j+1)==i)
+            {
+                neighbourList[i][a.getTown(j+1)]=1;
+            }
+            if(b.getTown(j+1)==1)
+            {
+                neighbourList[i][b.getTown(j+1)]=1;
+            }
+        }
+    }
+    //mutate(out,chance,*town);
 }
 
 void generateRandomMember(route &child,map &town){

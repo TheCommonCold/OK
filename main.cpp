@@ -35,9 +35,6 @@ int main() {
         generations.createNewGeneration(*&town,chance,true);
         generations.calcFitnessAll(*&town);
         if(generations.getCurrentLengthSum()==previousLengthSum)failCounter++;
-        //for (route &it: generations.getPool()){
-        //    checkVector(it.getRoute(),it.getLength(),town,generations);
-        //}
         if(j%100==0){
             std::cout<<generations.getBestLength()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentLengthSum()<<std::endl;
             for(auto it:generations.getBestRoute().getRoute()){
@@ -47,23 +44,5 @@ int main() {
         }
         j++;
     }
-//    std::cout<<generations.getMaxFitness()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentFitnessSum()<<" "<<generations.getWorstLength()<<std::endl;
-//    int arej[generations.getPool().size()];
-//    for (int i=0;i<generations.getPool().size();i++) arej[i]=0;
-//    for (int i=0;i<generations.getCurrentFitnessSum();i++)
-//    {
-//        int x=generations.findParent();
-//        arej[x]++;
-//    }
-//    for (int i=0;i<generations.getPool().size();i++){
-//        std::cout<<i+1<<" "<<arej[i]<<" "<<generations.getPool()[i].getFitness()<<std::endl;
-//    }
-    //generations.printAllSpecimen();
-    //std::cout<< generations.getWorstLength();
-//    populateGeneration(*&town,*&generation);
-//    genePool pool;
-//    pool.calcMaxFitness(*&generation,*&town);
-//    pool.createPool(*&generation,*&town);
-    //std::cout<<generation[20].getTown(0)<<"  "<<generation[20].getFitness();
     return 0;
 }
