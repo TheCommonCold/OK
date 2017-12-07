@@ -178,6 +178,61 @@ void breedER(route a, route b,route* out, map* town,double chance){
 //    std::cout<<std::endl;
 //    std::cout<<std::endl;
     mutate(out,chance,*town);
+    out->calcLength(*town);
+}
+
+// Do all 2-opt combinations
+void TwoOpt(route a, route b,route* out, map* town,double chance)
+{
+    // Get tour size
+    int size = a.getSize();
+
+    // repeat until no improvement is made
+        b.clearRoute();
+        double best_distance = a.calcLength(*town);
+
+        for ( int i = 0; i < size - 1; i++ )
+        {
+            for ( int k = i + 1; k < size; k++)
+            {
+                TwoOptSwap( i, k,a, b);
+
+                double new_distance = a.calcLength(*town);
+
+                if ( new_distance < best_distance )
+                {
+                    // Improvement found so reset
+                    a = b;
+                    best_distance = new_distance;
+                }
+            }
+        }
+    *out=a;
+}
+
+void TwoOptSwap( const int& i, const int& k, route a, route &b)
+{
+    int size = a.getSize();
+
+    // 1. take route[0] to route[i-1] and add them in order to new_route
+    for ( int c = 0; c <= i - 1; ++c )
+    {
+        b.addRoute(a.getTown( c ) );
+    }
+
+    // 2. take route[i] to route[k] and add them in reverse order to new_route
+    int dec = 0;
+    for ( int c = i; c <= k; ++c )
+    {
+        b.addRoute( a.getTown( k - dec ));
+        dec++;
+    }
+
+    // 3. take route[k+1] to end and add them in order to new_route
+    for ( int c = k + 1; c < size; ++c )
+    {
+        b.addRoute(  a.getTown( c ) );
+    }
 }
 
 void generateRandomMember(route &child,map &town){
@@ -230,7 +285,7 @@ void mutate(route* a,double MutationChance,map &town) {
             a->setTown(swapA,j);
         }
     }
-    if(a->calcLength(town)>b.calcLength(town))a=&b;
+    //if(a->calcLength(town)>b.calcLength(town))a=&b;
 }
 
 

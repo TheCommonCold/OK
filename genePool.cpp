@@ -119,7 +119,20 @@ void genePool::createNewGeneration(map &town,double chance, bool zachowywac){
 //        for (auto it:this->pool)std::cout<<it.getLength()<<std::endl;
 
     }
-    this->pool.erase(this->pool.begin(),this->pool.begin()+generationSize);
+    int newSize=pool.size();
+    //std::cout<<pool.size()<<std::endl;
+    int numberOfDeleted=0;
+    for (int i=size;i<newSize;i++) {
+        for (int j=size;j<newSize;j++){
+            if(this->pool[i].getLength()==this->pool[j].getLength() && i!=j){
+                this->pool.erase(this->pool.begin()+i);
+                newSize=pool.size();
+            }
+        }
+    }
+    //std::cout<<pool.size()<<std::endl;
+    this->pool.erase(this->pool.begin(),this->pool.begin()+newSize-size);
+
 //    for (auto it:this->pool)std::cout<<it.getLength()<<std::endl;
 
 }

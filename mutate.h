@@ -12,5 +12,7 @@ void mutate(route* a,double mutationChance,map &town);
 void fix(route* a,map* town, bool* change);
 void generateRandomMember(route &child,map &town);
 void breedER(route a, route b,route* out, map* town,double chance);
+void TwoOpt(route a, route b,route* out, map* town,double chance);
+void TwoOptSwap( const int& i, const int& k, route a, route &b);
 
 #endif //OK_PROJEKT_MUTATE_H

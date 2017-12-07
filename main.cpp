@@ -27,7 +27,8 @@ int main() {
     int previousLengthSum;
     double chance=genomMutationChance;
     while(true){
-        previousLengthSum=generations.getCurrentLengthSum();
+        std::cout<<"generacja: "<<j<<" postep: "<<generations.getCurrentLengthSum()<<" best: "<<generations.getBestLength()<<std::endl;
+        previousLengthSum=generations.getCurrentBestLength();
         if(failCounter>=overdDriveThreshhold){
             failCounter=0;
             chance=chance+0.1;
@@ -39,7 +40,7 @@ int main() {
         }
         generations.createNewGeneration(*&town,chance,true);
         generations.calcFitnessAll(*&town);
-        if(generations.getCurrentLengthSum()==previousLengthSum)failCounter++;
+        if(generations.getCurrentBestLength()==previousLengthSum)failCounter++;
         if(j%100==0){
             std::cout<<generations.getBestLength()<<" "<<generations.getCurrentBestLength()<<" "<<generations.getCurrentLengthSum()<<std::endl;
             for(auto it:generations.getBestRoute().getRoute()){
