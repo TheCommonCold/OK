@@ -9,11 +9,12 @@
 
 int main() {
     map town;
+
     town.load();
     genePool generations;
-    std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
-    populateGeneration(*&town,*&generations);
-    generations.calcFitnessAll(*&town);
+//    std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
+//    populateGeneration(*&town,*&generations);
+//    generations.calcFitnessAll(*&town);
     route a;
     route b;
     std::vector<int> veca={8, 4, 7, 3, 6, 2, 5, 1, 9, 0};
@@ -24,7 +25,9 @@ int main() {
         b.addTown(vecb[i]);
     }
     route out;
+    std::cout<<"PMXBOI\n";
     PMXboi(a,b,&out,&town,0);
+    return 0;
     //generations.improve(town);
     int i=1;
     for (route &it: generations.getPool()){

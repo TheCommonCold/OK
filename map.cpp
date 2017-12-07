@@ -5,7 +5,7 @@ void map::load(){
     std::cout<<"[map.load()] Kto otwiera?\n0 - Lukasz domowy\n1 - Lukasz - laptop\n2 - Artur Y70\n3 - Artur Linux\n\n";
     int number_of_location=2;
     std::string location_of_files;
-    std::cin>>number_of_location;
+    //std::cin>>number_of_location;
     switch (number_of_location)
     {
         case 0:

@@ -79,10 +79,19 @@ void breedCross(route a, route b, route* out, map* town,double chance){
 }
 
 void PMXboi(route a, route b,route* out, map* town,double chance) {
-    int iloscMiast=10;
-    int liczba[2]={0,iloscMiast};
+//    for (auto i:a.getRoute()){
+//        std::cout<<i<<" ";
+//    }
+//    std::cout<<std::endl;
+//    for (auto i:b.getRoute()){
+//        std::cout<<i<<" ";
+//    }
+//    std::cout<<std::endl;
+    int iloscMiast=town->getSize();
+    int liczba[2]={3,7};
     do {
-        for (int i = 0; i < 2; i++) liczba[i] = getRandomNumber(iloscMiast);
+       for (int i = 0; i < 2; i++) liczba[i] = getRandomNumber(iloscMiast);
+
     }while(liczba[0]==liczba[1]);
     if(liczba[0]>liczba[1]){
         int tmp=liczba[0];
@@ -98,20 +107,40 @@ void PMXboi(route a, route b,route* out, map* town,double chance) {
         pozycje[0][a.getTown(i)]=i;
         pozycje[1][b.getTown(i)]=i;
     }
+
     for (int i=liczba[0];i<liczba[1];i++)
     {
-        child[i]=a.getRoute()[i];
+        child[i]=a.getTown(i);
         uzyte[child[i]]=true;
     }
-    for (int i=liczba[0];i<liczba[1];i++)
-    {
-     int townToPlace=b.getTown(i);
-     int currentTown=townToPlace;
-    while(!uzyte[currentTown]){
-        currentTown=pozycje[0][currentTown];
+    int townToPlace, currentTown, indeks;
+    for (int i=liczba[0];i<liczba[1];i++) {
+        townToPlace = b.getTown(i);
+        if (!uzyte[townToPlace]) {
+            currentTown = townToPlace;
+            do {
+                indeks = pozycje[1][currentTown];
+                currentTown = a.getTown(indeks);
+//                std::cout<<currentTown<<" "<<indeks<<" "<<townToPlace<<std::endl;
+            } while (indeks>=liczba[0]&&indeks<liczba[1]);
+            child[indeks] = townToPlace;
+            uzyte[townToPlace]=true;
+        }
+//        for (auto i:child){
+//            std::cout<<i<<" ";
+//        }
+//        std::cout<<std::endl;
     }
-
+    for(int i=0;i<iloscMiast;i++){
+        if (!uzyte[b.getTown(i)]){
+            child[i]=b.getTown(i);
+        }
     }
+//    for (auto i:child){
+//        std::cout<<i<<" ";
+//    }
+//    std::cout<<std::endl;
+    out->setRoute(child,*town);
 }
 
 

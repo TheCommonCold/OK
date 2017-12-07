@@ -1,13 +1,15 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/OK_Projekt.dir/main.cpp.o"
-  "CMakeFiles/OK_Projekt.dir/map.cpp.o"
-  "CMakeFiles/OK_Projekt.dir/route.cpp.o"
-  "CMakeFiles/OK_Projekt.dir/mutate.cpp.o"
-  "CMakeFiles/OK_Projekt.dir/misc.cpp.o"
-  "CMakeFiles/OK_Projekt.dir/genePool.cpp.o"
-  "CMakeFiles/OK_Projekt.dir/genePoolArtur.cpp.o"
+  "CMakeFiles/OK_Projekt.dir/main.cpp.obj"
+  "CMakeFiles/OK_Projekt.dir/map.cpp.obj"
+  "CMakeFiles/OK_Projekt.dir/route.cpp.obj"
+  "CMakeFiles/OK_Projekt.dir/mutate.cpp.obj"
+  "CMakeFiles/OK_Projekt.dir/misc.cpp.obj"
+  "CMakeFiles/OK_Projekt.dir/genePool.cpp.obj"
+  "CMakeFiles/OK_Projekt.dir/genePoolArtur.cpp.obj"
   "OK_Projekt.pdb"
-  "OK_Projekt"
+  "OK_Projekt.exe"
+  "OK_Projekt.exe.manifest"
+  "libOK_Projekt.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
