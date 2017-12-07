@@ -3,7 +3,7 @@ void route::clearRoute(){
     this->route.clear();
 }
 
-void route::addRoute(int a){
+void route::addTown(int a){
     this->route.push_back (a);
 }
 

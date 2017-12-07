@@ -4,8 +4,8 @@
 void breedCross2(route a, route b, route &out, map &town){
     int i=1;
     int target=getRandomNumber(1);
-    if(target)out.addRoute(a.getTown(0));
-    else out.addRoute(b.getTown(0));
+    if(target)out.addTown(a.getTown(0));
+    else out.addTown(b.getTown(0));
     while(i<town.getSize()){
         target=getRandomNumber(1);
         int j=0;
@@ -15,14 +15,14 @@ void breedCross2(route a, route b, route &out, map &town){
             {
                 j++;
             }
-            out.addRoute(a.getTown(j + 1));
+            out.addTown(a.getTown(j + 1));
         }else
         {
             while(b.getTown(j)!= out.getTown(i - 1))
             {
                 j++;
             }
-            out.addRoute(b.getTown(j + 1));
+            out.addTown(b.getTown(j + 1));
         }
         for(j=0;j<i;j++)
         {
@@ -63,13 +63,13 @@ void breedCross(route a, route b, route* out, map* town,double chance){
     int ratio=getRandomNumber(town->getSize());
     int i=0;
     for(;i<ratio;i++){
-        out->addRoute(a.getTown(i));
+        out->addTown(a.getTown(i));
         visited[a.getTown(i)]=true;
     }
     int j=0;
     while(i<town->getSize()){
         if(visited[b.getTown(j)]==false){
-            out->addRoute(b.getTown(j));
+            out->addTown(b.getTown(j));
             visited[b.getTown(j)]=true;
             i++;
         }
@@ -77,6 +77,43 @@ void breedCross(route a, route b, route* out, map* town,double chance){
     }
     mutate(out,chance,*town);
 }
+
+void PMXboi(route a, route b,route* out, map* town,double chance) {
+    int iloscMiast=10;
+    int liczba[2]={0,iloscMiast};
+    do {
+        for (int i = 0; i < 2; i++) liczba[i] = getRandomNumber(iloscMiast);
+    }while(liczba[0]==liczba[1]);
+    if(liczba[0]>liczba[1]){
+        int tmp=liczba[0];
+        liczba[0]=liczba[1];
+        liczba[1]=tmp;
+    }
+    std::vector<int> child;
+    bool uzyte[iloscMiast];
+    int pozycje[2][iloscMiast];
+    for(int i=0;i<iloscMiast;i++){
+        child.emplace_back();
+        uzyte[i]=false;
+        pozycje[0][a.getTown(i)]=i;
+        pozycje[1][b.getTown(i)]=i;
+    }
+    for (int i=liczba[0];i<liczba[1];i++)
+    {
+        child[i]=a.getRoute()[i];
+        uzyte[child[i]]=true;
+    }
+    for (int i=liczba[0];i<liczba[1];i++)
+    {
+     int townToPlace=b.getTown(i);
+     int currentTown=townToPlace;
+    while(!uzyte[currentTown]){
+        currentTown=pozycje[0][currentTown];
+    }
+
+    }
+}
+
 
 void breedER(route a, route b,route* out, map* town,double chance){
     int n=a.getTown(0);
@@ -134,7 +171,7 @@ void breedER(route a, route b,route* out, map* town,double chance){
 //        std::cout<<"   "<<neighbourCount[i];
 //        std::cout<<std::endl;
 //    }
-    out->addRoute(n);
+    out->addTown(n);
     std::vector<int> randomList;
     while(out->getSize()<town->getSize())
     {
@@ -170,7 +207,7 @@ void breedER(route a, route b,route* out, map* town,double chance){
 //        }
 //        std::cout<<std::endl;
         n=randomList[getRandomNumber(randomList.size()-1)];
-        out->addRoute(n);
+        out->addTown(n);
     }
 //    for(int i=0;i<town->getSize();i++){
 //        std::cout<<out->getTown(i)<<" ";
@@ -217,28 +254,28 @@ void TwoOptSwap( const int& i, const int& k, route a, route &b)
     // 1. take route[0] to route[i-1] and add them in order to new_route
     for ( int c = 0; c <= i - 1; ++c )
     {
-        b.addRoute(a.getTown( c ) );
+        b.addTown(a.getTown(c));
     }
 
     // 2. take route[i] to route[k] and add them in reverse order to new_route
     int dec = 0;
     for ( int c = i; c <= k; ++c )
     {
-        b.addRoute( a.getTown( k - dec ));
+        b.addTown(a.getTown(k - dec));
         dec++;
     }
 
     // 3. take route[k+1] to end and add them in order to new_route
     for ( int c = k + 1; c < size; ++c )
     {
-        b.addRoute(  a.getTown( c ) );
+        b.addTown(a.getTown(c));
     }
 }
 
 void generateRandomMember(route &child,map &town){
     for(int i=0;i<town.getSize();i++)
     {
-        child.addRoute(i);
+        child.addTown(i);
     }
     int swapA,swapB,j;
     for(int i=0;i<child.getSize();i++){

@@ -15,7 +15,7 @@ private:
     double length, fitness;
 
 public:
-    void addRoute(int a);
+    void addTown(int a);
     void setTown(int a,int i);
     int getTown(int i);
     void clearRoute();

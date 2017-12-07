@@ -14,7 +14,17 @@ int main() {
     std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
     populateGeneration(*&town,*&generations);
     generations.calcFitnessAll(*&town);
-
+    route a;
+    route b;
+    std::vector<int> veca={8, 4, 7, 3, 6, 2, 5, 1, 9, 0};
+    std::vector<int> vecb={0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    for(int i=0;i<10;i++)
+    {
+        a.addTown(veca[i]);
+        b.addTown(vecb[i]);
+    }
+    route out;
+    PMXboi(a,b,&out,&town,0);
     //generations.improve(town);
     int i=1;
     for (route &it: generations.getPool()){

@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Luk3r/Documents/GitHub/OK/genePool.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePool.cpp.obj"
-  "C:/Users/Luk3r/Documents/GitHub/OK/genePoolArtur.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePoolArtur.cpp.obj"
-  "C:/Users/Luk3r/Documents/GitHub/OK/init.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/init.cpp.obj"
-  "C:/Users/Luk3r/Documents/GitHub/OK/main.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/main.cpp.obj"
-  "C:/Users/Luk3r/Documents/GitHub/OK/map.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/map.cpp.obj"
-  "C:/Users/Luk3r/Documents/GitHub/OK/mutate.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/mutate.cpp.obj"
-  "C:/Users/Luk3r/Documents/GitHub/OK/route.cpp" "C:/Users/Luk3r/Documents/GitHub/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/route.cpp.obj"
+  "/home/artur/Repos/CLion/OK/genePool.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePool.cpp.o"
+  "/home/artur/Repos/CLion/OK/genePoolArtur.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePoolArtur.cpp.o"
+  "/home/artur/Repos/CLion/OK/main.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/main.cpp.o"
+  "/home/artur/Repos/CLion/OK/map.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/map.cpp.o"
+  "/home/artur/Repos/CLion/OK/misc.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/misc.cpp.o"
+  "/home/artur/Repos/CLion/OK/mutate.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/mutate.cpp.o"
+  "/home/artur/Repos/CLion/OK/route.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/route.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
