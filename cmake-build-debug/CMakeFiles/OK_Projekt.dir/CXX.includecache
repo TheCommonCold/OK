@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-D:/Artur/Repos/OK/genePool.cpp
+/home/artur/Repos/CLion/OK/genePool.cpp
 genePool.h
-D:/Artur/Repos/OK/genePool.h
+/home/artur/Repos/CLion/OK/genePool.h
 mutate.h
-D:/Artur/Repos/OK/mutate.h
+/home/artur/Repos/CLion/OK/mutate.h
 misc.h
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 
-D:/Artur/Repos/OK/genePool.h
+/home/artur/Repos/CLion/OK/genePool.h
 route.h
-D:/Artur/Repos/OK/route.h
+/home/artur/Repos/CLion/OK/route.h
 map.h
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 vector
 -
 random
@@ -26,13 +26,13 @@ random
 algorithm
 -
 
-D:/Artur/Repos/OK/genePoolArtur.cpp
+/home/artur/Repos/CLion/OK/genePoolArtur.cpp
 genePool.h
-D:/Artur/Repos/OK/genePool.h
+/home/artur/Repos/CLion/OK/genePool.h
 misc.h
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 
-D:/Artur/Repos/OK/main.cpp
+/home/artur/Repos/CLion/OK/main.cpp
 iostream
 -
 fstream
@@ -40,21 +40,21 @@ fstream
 vector
 -
 map.h
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 route.h
-D:/Artur/Repos/OK/route.h
+/home/artur/Repos/CLion/OK/route.h
 mutate.h
-D:/Artur/Repos/OK/mutate.h
+/home/artur/Repos/CLion/OK/mutate.h
 misc.h
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 genePool.h
-D:/Artur/Repos/OK/genePool.h
+/home/artur/Repos/CLion/OK/genePool.h
 
-D:/Artur/Repos/OK/map.cpp
+/home/artur/Repos/CLion/OK/map.cpp
 map.h
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 iostream
 -
 fstream
@@ -64,15 +64,15 @@ time.h
 math.h
 -
 
-D:/Artur/Repos/OK/misc.cpp
+/home/artur/Repos/CLion/OK/misc.cpp
 misc.h
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 genePool.h
-D:/Artur/Repos/OK/genePool.h
+/home/artur/Repos/CLion/OK/genePool.h
 iostream
 -
 
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 ctime
 -
 random
@@ -82,37 +82,39 @@ vector
 thread
 -
 map.h
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 route.h
-D:/Artur/Repos/OK/route.h
+/home/artur/Repos/CLion/OK/route.h
 mutate.h
-D:/Artur/Repos/OK/mutate.h
+/home/artur/Repos/CLion/OK/mutate.h
 genePool.h
-D:/Artur/Repos/OK/genePool.h
+/home/artur/Repos/CLion/OK/genePool.h
 
-D:/Artur/Repos/OK/mutate.cpp
+/home/artur/Repos/CLion/OK/mutate.cpp
 mutate.h
-D:/Artur/Repos/OK/mutate.h
+/home/artur/Repos/CLion/OK/mutate.h
 misc.h
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 
-D:/Artur/Repos/OK/mutate.h
+/home/artur/Repos/CLion/OK/mutate.h
 map.h
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 random
 -
 route.h
-D:/Artur/Repos/OK/route.h
+/home/artur/Repos/CLion/OK/route.h
 time.h
 -
+vector
+-
 misc.h
-D:/Artur/Repos/OK/misc.h
+/home/artur/Repos/CLion/OK/misc.h
 
-D:/Artur/Repos/OK/route.cpp
+/home/artur/Repos/CLion/OK/route.cpp
 route.h
-D:/Artur/Repos/OK/route.h
+/home/artur/Repos/CLion/OK/route.h
 
-D:/Artur/Repos/OK/route.h
+/home/artur/Repos/CLion/OK/route.h
 iostream
 -
 fstream
@@ -120,5 +122,5 @@ fstream
 vector
 -
 map.h
-D:/Artur/Repos/OK/map.h
+/home/artur/Repos/CLion/OK/map.h
 

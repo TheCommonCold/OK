@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Artur/Repos/OK/genePool.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePool.cpp.obj"
-  "D:/Artur/Repos/OK/genePoolArtur.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePoolArtur.cpp.obj"
-  "D:/Artur/Repos/OK/main.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/main.cpp.obj"
-  "D:/Artur/Repos/OK/map.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/map.cpp.obj"
-  "D:/Artur/Repos/OK/misc.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/misc.cpp.obj"
-  "D:/Artur/Repos/OK/mutate.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/mutate.cpp.obj"
-  "D:/Artur/Repos/OK/route.cpp" "D:/Artur/Repos/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/route.cpp.obj"
+  "/home/artur/Repos/CLion/OK/genePool.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePool.cpp.o"
+  "/home/artur/Repos/CLion/OK/genePoolArtur.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/genePoolArtur.cpp.o"
+  "/home/artur/Repos/CLion/OK/main.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/main.cpp.o"
+  "/home/artur/Repos/CLion/OK/map.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/map.cpp.o"
+  "/home/artur/Repos/CLion/OK/misc.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/misc.cpp.o"
+  "/home/artur/Repos/CLion/OK/mutate.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/mutate.cpp.o"
+  "/home/artur/Repos/CLion/OK/route.cpp" "/home/artur/Repos/CLion/OK/cmake-build-debug/CMakeFiles/OK_Projekt.dir/route.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

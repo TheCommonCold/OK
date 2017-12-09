@@ -5,6 +5,7 @@
 #include <random>
 #include "route.h"
 #include <time.h>
+#include <vector>
 #include "misc.h"
 void breedCross(route a, route b, route *out, map *town,double chance);
 void wypislosowych(std::mt19937 mt,std::uniform_int_distribution<int> dis);
@@ -15,5 +16,5 @@ void breedER(route a, route b,route* out, map* town,double chance);
 void TwoOpt(route a, route b,route* out, map* town,double chance);
 void TwoOptSwap( const int& i, const int& k, route a, route &b);
 void PMXboi(route a, route b,route* out, map* town,double chance);
-
+void ERboi(route a, route b,route* out, map* town,double chance);
 #endif //OK_PROJEKT_MUTATE_H

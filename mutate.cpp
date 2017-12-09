@@ -77,16 +77,124 @@ void breedCross(route a, route b, route* out, map* town,double chance){
     }
     mutate(out,chance,*town);
 }
+void printListaSasiadow(std::vector<std::vector<int>> listaSasiadow){
+    int i=0;
+    for (auto lista:listaSasiadow){
+        printf("%c: ",i+65);
+        for (auto ele:lista){
+            printf("%c ", ele+65);
+        }
+        printf("\n");
+        i++;
+    }
+}
+
+void ERboi(route a, route b,route* out, map* town,double chance){
+    //int iloscMiast=town->getSize();
+    route rodzice[2]={a,b};
+    int iloscMiast=7;
+    std::vector<std::vector<int>> listaSasiadow;
+    for (int i=0;i<iloscMiast;i++) listaSasiadow.emplace_back();
+    int sasiedzi[2][2];
+    for (int i=0;i<iloscMiast;i++){
+        if (i>0){
+            for(int j=0;j<2;j++){
+                for(int k=0;k<2;k++)
+                {
+                    sasiedzi[k][0+j]=rodzice[k].getRoute()[i-j];
+                }
+            }
+        }
+        else{
+            for(int j=0;j<2;j++){
+                sasiedzi[j][0]=rodzice[j].getRoute().front();
+                sasiedzi[j][1]=rodzice[j].getRoute().back();
+            }
+        }
+        for (auto &j : sasiedzi) {
+            bool juzJest=false;
+            for (auto ele:listaSasiadow[j[0]]){
+                if (ele==j[1]){
+                    juzJest=true;
+                    break;
+                }
+            }
+            if(!juzJest){
+                for(int k=0;k<2;k++){
+                    listaSasiadow[j[k]].push_back(j[1-k]);
+                }
+            }
+
+        }
+    }
+    printListaSasiadow(listaSasiadow);
+    std::vector<int> child;
+    int iloscUzytych;
+    bool uzyto[iloscMiast]={0};
+    child.push_back(rodzice[0].getRoute()[0]);
+    int nowy;
+    while(child.size()<iloscMiast){
+
+        int ostatni=child.back();
+        uzyto[ostatni]=true;
+        iloscUzytych++;
+
+        for (auto sasiad:listaSasiadow[ostatni]){
+            int doUsuniecia=0;
+            for (auto sasiadSasiada:listaSasiadow[sasiad]){
+                if (sasiadSasiada==ostatni){
+                    listaSasiadow[sasiad].erase(listaSasiadow[sasiad].begin()+doUsuniecia);
+                    break;
+                }
+                doUsuniecia++;
+            }
+        }
+
+        if (listaSasiadow[ostatni].size()){
+            int i=0;
+            int sasiedziOstatniego[4][2];
+            for (auto sasiad:listaSasiadow[ostatni]){
+                sasiedziOstatniego[i][0]=sasiad;
+                sasiedziOstatniego[i][1]=listaSasiadow[sasiad].size();
+                i++;
+            }
+            int minValue=sasiedziOstatniego[0][1];
+            int iloscNajmniejszych=1;
+            std::vector<int> najmniejsi;
+            najmniejsi.push_back(sasiedziOstatniego[0][0]);
+            for (int j=1;j<i;j++){
+                if (sasiedziOstatniego[j][1]<minValue){
+                    minValue=sasiedziOstatniego[j][1];
+                    iloscNajmniejszych=1;
+                    najmniejsi.clear();
+                    najmniejsi.push_back(sasiedziOstatniego[j][0]);
+                }
+                else if(sasiedziOstatniego[j][1]==minValue){
+                    iloscNajmniejszych++;
+                    najmniejsi.push_back(sasiedziOstatniego[j][0]);
+                }
+            }
+            nowy=najmniejsi[getRandomNumber(najmniejsi.size())];
+        }
+        else{
+            int index=getRandomNumber(iloscMiast-iloscUzytych);
+            for (int i=0;i<iloscMiast;i++){
+                if(!uzyto[i]){
+                    if(!index){
+                        nowy=i;
+                        break;
+                    }
+                    index--;
+                }
+
+            }
+        }
+        child.push_back(nowy);
+    }
+
+}
 
 void PMXboi(route a, route b,route* out, map* town,double chance) {
-//    for (auto i:a.getRoute()){
-//        std::cout<<i<<" ";
-//    }
-//    std::cout<<std::endl;
-//    for (auto i:b.getRoute()){
-//        std::cout<<i<<" ";
-//    }
-//    std::cout<<std::endl;
     int iloscMiast=town->getSize();
     int liczba[2]={3,7};
     do {
@@ -121,25 +229,16 @@ void PMXboi(route a, route b,route* out, map* town,double chance) {
             do {
                 indeks = pozycje[1][currentTown];
                 currentTown = a.getTown(indeks);
-//                std::cout<<currentTown<<" "<<indeks<<" "<<townToPlace<<std::endl;
             } while (indeks>=liczba[0]&&indeks<liczba[1]);
             child[indeks] = townToPlace;
             uzyte[townToPlace]=true;
         }
-//        for (auto i:child){
-//            std::cout<<i<<" ";
-//        }
-//        std::cout<<std::endl;
     }
     for(int i=0;i<iloscMiast;i++){
         if (!uzyte[b.getTown(i)]){
             child[i]=b.getTown(i);
         }
     }
-//    for (auto i:child){
-//        std::cout<<i<<" ";
-//    }
-//    std::cout<<std::endl;
     out->setRoute(child,*town);
 }
 
