@@ -88,11 +88,16 @@ void printListaSasiadow(std::vector<std::vector<int>> listaSasiadow){
         i++;
     }
 }
-
+void printChild(std::vector<int> child){
+    for(auto i:child){
+    printf("%c ",i+65);
+}
+    printf("\n");
+}
 void ERboi(route a, route b,route* out, map* town,double chance){
-    //int iloscMiast=town->getSize();
+    int iloscMiast=town->getSize();
     route rodzice[2]={a,b};
-    int iloscMiast=7;
+    //int iloscMiast=7;
     std::vector<std::vector<int>> listaSasiadow;
     for (int i=0;i<iloscMiast;i++) listaSasiadow.emplace_back();
     int sasiedzi[2][2];
@@ -127,9 +132,9 @@ void ERboi(route a, route b,route* out, map* town,double chance){
 
         }
     }
-    printListaSasiadow(listaSasiadow);
+
     std::vector<int> child;
-    int iloscUzytych;
+    int iloscUzytych=0;
     bool uzyto[iloscMiast]={0};
     child.push_back(rodzice[0].getRoute()[0]);
     int nowy;
@@ -149,15 +154,16 @@ void ERboi(route a, route b,route* out, map* town,double chance){
                 doUsuniecia++;
             }
         }
-
         if (listaSasiadow[ostatni].size()){
             int i=0;
             int sasiedziOstatniego[4][2];
+
             for (auto sasiad:listaSasiadow[ostatni]){
                 sasiedziOstatniego[i][0]=sasiad;
                 sasiedziOstatniego[i][1]=listaSasiadow[sasiad].size();
                 i++;
             }
+
             int minValue=sasiedziOstatniego[0][1];
             int iloscNajmniejszych=1;
             std::vector<int> najmniejsi;
@@ -174,10 +180,12 @@ void ERboi(route a, route b,route* out, map* town,double chance){
                     najmniejsi.push_back(sasiedziOstatniego[j][0]);
                 }
             }
-            nowy=najmniejsi[getRandomNumber(najmniejsi.size())];
+            int index=getRandomNumber(najmniejsi.size()-1);
+            nowy=najmniejsi[index];
         }
         else{
-            int index=getRandomNumber(iloscMiast-iloscUzytych);
+
+            int index=getRandomNumber(iloscMiast-iloscUzytych-1);
             for (int i=0;i<iloscMiast;i++){
                 if(!uzyto[i]){
                     if(!index){
@@ -191,7 +199,7 @@ void ERboi(route a, route b,route* out, map* town,double chance){
         }
         child.push_back(nowy);
     }
-
+    out->setRoute(child,*town);
 }
 
 void PMXboi(route a, route b,route* out, map* town,double chance) {
@@ -240,6 +248,7 @@ void PMXboi(route a, route b,route* out, map* town,double chance) {
         }
     }
     out->setRoute(child,*town);
+    mutate(out,chance,*town);
 }
 
 

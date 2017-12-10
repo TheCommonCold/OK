@@ -12,9 +12,9 @@ int main() {
 
     town.load();
     genePool generations;
-//    std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
-//    populateGeneration(*&town,*&generations);
-//    generations.calcFitnessAll(*&town);
+    std::cout<<zachlannyArtura(*&town, generations)<<std::endl;
+    populateGeneration(*&town,*&generations);
+    generations.calcFitnessAll(*&town);
     route a;
     route b;
     std::vector<int> veca={'A', 'B', 'F', 'E','D','G','C'};
@@ -25,12 +25,11 @@ int main() {
         vecb[i]-=65;
         a.addTown(veca[i]);
         b.addTown(vecb[i]);
-        printf("%d %d %d\n",i,veca[i],vecb[i]);
+       // printf("%d %d %d\n",i,veca[i],vecb[i]);
     }
     route out;
     std::cout<<"ERBOI\n";
-    ERboi(a,b,&out,&town,0);
-    return 0;
+
     //generations.improve(town);
     int i=1;
     for (route &it: generations.getPool()){
@@ -43,7 +42,7 @@ int main() {
     int previousLengthSum;
     double chance=genomMutationChance;
     while(true){
-        std::cout<<"generacja: "<<j<<" postep: "<<generations.getCurrentLengthSum()<<" best: "<<generations.getBestLength()<<std::endl;
+        if(j%10==0)std::cout<<"generacja: "<<j<<" postep: "<<generations.getCurrentLengthSum()<<" best: "<<generations.getBestLength()<<std::endl;
         previousLengthSum=generations.getCurrentBestLength();
         if(failCounter>=overdDriveThreshhold){
             failCounter=0;

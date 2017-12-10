@@ -100,7 +100,7 @@ void genePool::createNewGeneration(map &town,double chance, bool zachowywac){
         int j=0;
         while (j<numberOfThreads && i<size) {
             children[j].clearRoute();
-           breedER(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town,chance);
+            threads.push_back(std::thread(ERboi,this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town,chance));
             //breedCross(this->getSpeciman(this->findParent()), this->getSpeciman(this->findParent()), &children[j], &town);
             //children[j]=this->getSpeciman(j);
             //threads.push_back(std::thread(fix,&children[j], town));
